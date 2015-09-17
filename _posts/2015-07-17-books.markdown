@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "Books"
+date:   2015-07-17 17:25:00
+category: private
+---
+
+
+七月初，在QQ签名上写下了"七月，开始在博客记录看了的书吧~ "，一个心血来潮的想法，就如同标题一样 -- 书旅，也是一个突然想到的标题而已。
+
+从高中开始基本一直都在看各种各样的书籍却没有一个记录。这是一个新开垦的田地，希望我能一直耕耘下去，不要让它荒芜了。
+
+说明：
+
+1.	书籍有好几个分类，以2015年7月为分界点。从七月份之前就开始看的标记为 ---正在看--- ，七月份以后开始看的标记为 ---开始看--- ，七月份以后看完的标记为 ---已看完---；
+2.	最新加入的记录会呈现在上面，书籍分类比如从 ---开始看--- 到 ---已看完--- ，旧的记录不会删除；
+3.	里面会存在一些自己去研究和探讨的框架类网站；
+4.	新增状态 ---已放弃--- ，代表自己决定放弃那个条目的阅读。
+
+简简单单的记录自己的书旅历程吧。Good Luck。
+
+<a href="http://cody1991.github.io/sysutangzxBlog/books.html">cody的书旅（图文版）</a>
+
+-------------------------------------
+
+阶段性总结（ 2015-09-10 ）
+===
+
+1.下面四个都没有标注日期，因为具体的日期也忘了。
+
+2.最近学习了下 [bower](http://bower.io/) ，感觉是个非常有用的工具，计划加入我自己的 [gulp-template](https://github.com/cody1991/gulp-template) 项目中，而这个项目也进行了很大的修改。
+
+3.原本在学习正妹的 [avalon.js](http://avalonjs.github.io/) MVVM框架，无奈受不了正妹的文档，转投 [vue.js](http://vuejs.org/) 的学习。
+
+4.学习完 [HTML5 Canvas基础教程](http://book.douban.com/subject/7162014/) 以后，打算开始看 [React : 引领未来的用户界面开发框架](http://book.douban.com/subject/26378583/) ，后续的话应该就是正式转向 [nodejs](https://nodejs.org/en/)的学习了，学习它的书本是 [深入浅出Node.js](http://book.douban.com/subject/25768396/) 。而在此之前也许会先看看 [HTTP权威指南](http://book.douban.com/subject/10746113/) 补补HTTP的知识。
+
+5.对于ES6的学习一直很纠结，感觉要学习的东西还是很多。一边走一边打算吧。
+
++	开始看 - [盗墓笔记](http://book.douban.com/subject/6953273/)
+	+	这是个大坑啊...
+
++	已看完 - 无限异能:超禁忌游戏 
+	+	如今只出版到第三季，第四季准备发布，暂且归为已看完
+
++	正在看 - [你不知道的JavaScript（上卷）](http://book.douban.com/subject/26351021/)
+	+	这本书看完了第一部分，抽空继续把第二部分的看完，感觉还不错
+
++	正在看 - [HTML5 Canvas基础教程](http://book.douban.com/subject/7162014/) 
+	+	书本看了四分之三了，感觉对canvas有了更加全面的认识。
+
+-------------------------------------
+
++	已放弃 - [平凡的世界](http://book.douban.com/subject/1084165/) (2015.08.23)
+	+	感觉放弃一本书的原因有自己给自己剧透，别人给自己剧透，人名难记
++	已看完 - [移动Web手册](http://book.douban.com/subject/26369130/) (2015.08.23)
++	开始看 - 无限异能:超禁忌游戏，蛮喜欢[宁航一](http://baike.baidu.com/link?url=AyAjxo0cBsDkO2ClZdj4oKGK9kc-8qJY1ahJeLpcHn97cHln94BK3rgk_8XLF9mpt1AN1VSaTfLXaVnZIz3taa)的书 (2015.08.23)
+
+-------------------------------------
+
+阶段性总结（ 2015-08-12 ）
+===
+
+1.最近的公司项目很多，没有太多的时间去学习自己的东西，[React](http://facebook.github.io/react/) 看了点官网的事例，感觉可以继续学下去。最近也购入了一本 [React : 引领未来的用户界面开发框架](http://book.douban.com/subject/26378583/)，准备好好看看。
+
+2.[《HTML5 Canvas核心技术》](http://book.douban.com/subject/24533314/)在下面被列入了已放弃，因为没有购买这本书，一直看电子书也很不爽，现在购入了一本[HTML5 Canvas基础教程](http://book.douban.com/subject/7162014/)，打算Canvas的学习就看着本好了。
+
+3.另外还购买了 [CSS禅意花园（修订版）](http://book.douban.com/subject/10956515/) ，重新看看这本经典书的修订版 ； [你不知道的JavaScript（上卷）](http://book.douban.com/subject/26351021/) ，增强自己的js编写能力； 以及[移动Web手册](http://book.douban.com/subject/26369130/) 来看看和自己息息相关的移动前端开发的书籍。 这几本也可以列入开始看的列表。
+
+4.前面的阶段性总结提及的基本都有了交代，nodejs是在实践中不断学习的，而 [gulp-template](https://github.com/cody1991/gulp-template) 项目也已经进行了大规模的修改。
+
+5.这词阶段性总结划入了六本新书，对于其先后的学习顺序没有太大的想法，不过如果开始看一本书了，就要坚持看下去把它看完。
+
++   开始看 - [平凡的世界](http://book.douban.com/subject/1084165/) (2015.08.12)
++	开始看 - [移动Web手册](http://book.douban.com/subject/26369130/) (2015.08.12)
++	开始看 - [你不知道的JavaScript（上卷）](http://book.douban.com/subject/26351021/) (2015.08.12)
++	开始看 - [CSS禅意花园（修订版）](http://book.douban.com/subject/10956515/) (2015.08.12)
++	开始看 - [React : 引领未来的用户界面开发框架](http://book.douban.com/subject/26378583/) (2015.08.12)
++	开始看 - [HTML5 Canvas基础教程](http://book.douban.com/subject/7162014/) (2015.08.12)
++	已看完 - [穆斯林的葬礼](http://book.douban.com/subject/10788580/) (2015.08.12)
++	已放弃 - [《HTML5 Canvas核心技术》](http://book.douban.com/subject/24533314/) (2015.08.12)
++	已放弃 - [Frozen UI](http://frozenui.github.io/) (2015.08.12)
+
+-------------------------------------
+
+阶段性总结（ 2015-07-17 ）
+===
+
+1.对于是否完整地学习原生的Canvas一直很纠结，或者求推荐比较轻量级的Canvas插件
+
+2.可以会转向 [React](http://facebook.github.io/react/) 的学习而放弃Angular.js
+
+3.nodejs的学习优先级不是最高的，看了部分 [深入浅出Node.js](http://book.douban.com/subject/25768396/) 然后对自己的 [gulp-template](https://github.com/cody1991/gulp-template) 项目进行了大修改，感觉学习nodejs而更好的使用基于nodejs的工具有一定的成效了。最近优先 [React](http://facebook.github.io/react/) 的学习吧。
+
++ 开始看 - [Frozen UI](http://frozenui.github.io/) (2015.07.15)
+	+ 看了下QQ的一个前端开发框架 -- Frozenui ，感觉还满喜欢。
++ 开始看 - [用AngularJS开发下一代Web应用](http://book.douban.com/subject/25752512/) (2015.07.12)
+	+ 看了一个星期左右，感觉不是很喜欢吧。打算再找找其他的angular书籍。也可能转向 [React](http://facebook.github.io/react/) 的学习
++ 开始看 - [穆斯林的葬礼](http://book.douban.com/subject/1082334/) (2015.07.05)
+	+ 看了几天，感觉会是一本非常喜欢的书
++ 正在看 - [深入浅出Node.js](http://book.douban.com/subject/25768396/)
+	+ 感觉nodejs是一门非常强大的语言。日常也有使用一些基于node的工具(如 [gulp](http://gulpjs.com/) )，如今想系统地学习下node.js了
++ 正在看 - [《HTML5 Canvas核心技术》](http://book.douban.com/subject/24533314/)
+	+ 想要系统地学习一遍canvas的使用
++ 正在看 - 《大主宰》
+	+ 天蚕土豆的书一直在追，它的斗破苍穹和武动乾坤是我少有的很喜欢的网络小说，大主宰现在还在连载中
++ 已看完 - [《编写可维护的JavaScript》](http://book.douban.com/subject/21792530/) (2015.07.05) 
+	+ 规范自己的javascript编写方式
+
+-------------------------------------

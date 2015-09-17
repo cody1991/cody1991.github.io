@@ -1,0 +1,13 @@
+# Site settings
+encoding: utf-8
+title: Home
+description: cody1991的个人博客
+baseurl: "http://cody1991.github.io/sysutangzxBlog" 
+# baseurl: '.'
+github_username:  cody1991
+paginate: 6
+paginate_path: "/page:num"
+footer_books: "cody的书旅"
+footer_github: "cody的github"
+footer_resume: "cody的简历"
+footer_resume_site: "http://cody1991.github.io/aboutme/index.html"

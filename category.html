@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="category-main">
+{% for category in site.categories %}
+	<div class= {{ category | first}}>
+		<h2>{{ category | first }}</h2>
+		<ul>
+		    {% for post in category.last %}
+		    <li>
+		    	<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		    	<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+		    </li>
+		    {% endfor %}
+		</ul>
+	</div>
+{% endfor %}
+</div>

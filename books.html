@@ -1,0 +1,146 @@
+---
+layout: default
+book: true
+books: 
+    -
+      title: 三体
+      imgSrc: http://img4.douban.com/lpic/s2768378.jpg
+      author: 刘慈欣  
+      link: http://book.douban.com/subject/2567698/
+      status: 未读
+      description: 
+    - title: 盗墓笔记
+      imgSrc: http://img4.douban.com/lpic/s10412319.jpg
+      author: 南派三叔
+      link: http://book.douban.com/subject/6953273/
+      status: 在读
+      description: 
+    - title: 盗墓笔记
+      imgSrc: http://img3.douban.com/lpic/s8862504.jpg
+      author:  Rob Hawkes 
+      link: http://book.douban.com/subject/7162014/
+      status: 在读
+      description: 
+    - 
+      title: 超禁忌游戏 第一季
+      imgSrc: http://img4.douban.com/lpic/s27986568.jpg
+      author: 宁航一
+      link: http://book.douban.com/subject/26261238/
+      status: 已读
+      description: 
+    - 
+      title: 超禁忌游戏 第二季
+      imgSrc: http://img4.douban.com/lpic/s28066337.jpg
+      author: 宁航一
+      link: http://book.douban.com/subject/26348618/
+      status: 已读
+      description: 
+    -
+      title: 你不知道的JavaScript(上卷)
+      imgSrc: http://img3.douban.com/lpic/s28033372.jpg
+      author: Kyle Simpson 
+      link: http://book.douban.com/subject/26351021/
+      status: 在读
+      description:
+    -
+      title: 移动Web手册
+      imgSrc: http://img4.douban.com/lpic/s28056637.jpg
+      author: Peter-Paul Koch（彼得-保罗 科赫） 
+      link: http://book.douban.com/subject/26369130/
+      status: 已读
+      description: 
+    -
+      title: React,引领未来的用户界面开发框架
+      imgSrc: http://img4.douban.com/lpic/s28061237.jpg
+      author: 卓越开发者联盟
+      link: http://book.douban.com/subject/26378583/
+      status: 在读
+      description: 
+    -
+      title: 穆斯林的葬礼
+      imgSrc: http://img3.douban.com/lpic/s10352285.jpg
+      author: 霍达 
+      link: http://book.douban.com/subject/10788580/
+      status: 已读
+      description: 
+    -
+      title: 深入浅出Node.js
+      imgSrc: http://img4.douban.com/lpic/s27269296.jpg
+      author: 朴灵 
+      link: http://book.douban.com/subject/25768396/
+      status: 在读
+      description: 
+    -
+      title: 大主宰
+      imgSrc: http://www.bxwx.org/image/62/62724/62724l.jpg
+      author: 天蚕土豆
+      link: http://baike.baidu.com/link?url=seACkWsxCzOVqQ6h0XgkQHGPfVfB_uSrL1P0XNSiBmIANI-wbcalX0w1U11a89S-vlQnvC6WXj4brH_77CkrFzHwAzoEKHQ5R3wfKxVXNN_
+      status: 在读
+      description: 
+    -
+      title: 编写可维护的JavaScript
+      imgSrc: http://img3.douban.com/lpic/s26615195.jpg
+      author: 扎卡斯 
+      link: http://book.douban.com/subject/21792530/
+      status: 已读
+      description: 
+---
+
+<div class="books">
+    <p>有什么好看的书，欢迎评论留言，非常感谢！</p>
+    <div class="ds-thread"></div>
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sysutangzx"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+    <h2>书旅目录</h2>
+    {% for book in page.books %}
+    <div class="book-item">
+        <p class="title">{{book.title}}</p>
+        <div class="clearfix row">
+            <div class="col-md-4 col-xs-12">
+                <img data-src="{{book.imgSrc}}" src="{{ '/source/loading.gif' | prepend: site.baseurl}}" class="book-images">
+            </div>
+            <div class="col-md-8 col-xs-12">
+                <table class="info">
+                    <tr>
+                        <td>作者</td>
+                        <td>{{book.author}}</td>
+                    </tr>
+                    <tr>
+                        <td>链接</td>
+                        <td>
+                            <a href="{{book.link}}">链接</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>状态</td>
+                        <td>
+                        {% if book.status == '已读' %}
+                            <span class="reading-state had-read">已读</span>
+                        {% elsif book.status == '在读' %}
+                            <span class="reading-state reading">在读</span>
+                        {% elsif book.status == '未读' %}
+                            <span class="reading-state no-read">未读</span>
+                        {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>评论</td>
+                        <td>{{book.description}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

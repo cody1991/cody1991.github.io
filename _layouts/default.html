@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+    <a href="#top" id="toTop"></a>
+    <div id="loading">
+        <ul class="bokeh">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    {% include header.html %}
+    <div class="page-content">
+        <div class="wrapper">
+            {{ content }}
+        </div>
+    </div>
+    {% include footer.html %}
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ '/js/common.js' | prepend:site.baseurl}}"></script>
+</body>
+
+</html>

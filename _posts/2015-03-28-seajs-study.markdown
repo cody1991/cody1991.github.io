@@ -296,7 +296,7 @@ module是一个对象，存储了模块的元信息，具体如下：
 
 	define({
 		author:'ZhangYang',
-		blog:'http://cody1991.github.io/sysutangzxBlog/'
+		blog:'http://cody1991.github.io/'
 	})
 
 返回给data变量的值是一个类似json的结构。最后就是使用jquery方法进行操作了，没什么好说的。

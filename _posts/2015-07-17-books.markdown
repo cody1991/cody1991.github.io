@@ -19,7 +19,7 @@ category: private
 
 简简单单的记录自己的书旅历程吧。Good Luck。
 
-<a href="http://cody1991.github.io/sysutangzxBlog/books.html">cody的书旅（图文版）</a>
+<a href="http://cody1991.github.io/books.html">cody的书旅（图文版）</a>
 
 -------------------------------------
 

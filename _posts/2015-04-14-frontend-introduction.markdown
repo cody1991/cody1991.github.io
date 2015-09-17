@@ -58,7 +58,7 @@ Codrops ( [Codrops , Useful resources and inspiration for creative minds](http:/
 
 最后的最后，推荐一个非常不错的github库： [front-end-collect](https://github.com/foru17/front-end-collect) ，里面真的收集了非常非常多的资源。另外就是自己最近收集的不少电子书和资料： [前端资源2015](http://yun.baidu.com/share/link?shareid=1197836167&uk=1443668030) 。
 
-这篇文章的doc版本下载地址：[frontend-introduction.doc](http://cody1991.github.io/sysutangzxBlog/source/frontend-introduction.doc) 谢谢。
+这篇文章的doc版本下载地址：[frontend-introduction.doc](http://cody1991.github.io/source/frontend-introduction.doc) 谢谢。
 
 
 

@@ -2,7 +2,7 @@
 encoding: utf-8
 title: Home
 description: cody1991的个人博客
-baseurl: "http://cody1991.github.io/sysutangzxBlog" 
+baseurl: "http://cody1991.github.io" 
 # baseurl: '.'
 github_username:  cody1991
 paginate: 6

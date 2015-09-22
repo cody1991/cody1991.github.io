@@ -31,7 +31,7 @@ Package Control 的下载方式很简单，使用 ctrl + ` 或者 菜单栏里�
 
 ----
 
-##[material-theme](https://github.com/equinusocio/material-theme)
+##[Material-theme](https://github.com/equinusocio/material-theme)
 
 sublime text的默认主题还是有点看不过去的，可以在菜单栏的 Perferences > Color Scheme 中更换，个人蛮喜欢 material theme 这个主题的，如果你也喜欢的话可以自行去下载安装。安装的方式是在菜单栏找到 Preferences > Package Control 选择 install Package 或者直接 ctrl + shift + p 之后键入 install Package ，然后键入插件名，它就会自动帮你下载安装了。之后我们可以按照它给的提示，打开 Preferences > Setting - User ，键入 
 
@@ -48,7 +48,7 @@ Preferences > Setting - User 是个人的设置，在 Preferences > Setting - De
 
 这个插件是我自己非常非常喜欢的一个插件，主要功能就是把你的 HTML CSS JAVASCRIPT 代码一键 [ alt + shift + H ] 格式化成符合规范的代码格式，自己一边敲代码一边 ctrl + s 和  alt + shift + H ，代码看起来整整齐齐非常舒坦 (没错我是个处女座) 。安装这个插件之前需要先安装 [nodejs](https://nodejs.org/en/) 环境。
 
-##[emmet-sublime](https://github.com/sergeche/emmet-sublime)
+##[Emmet-sublime](https://github.com/sergeche/emmet-sublime)
 
 emmet sublime 基本是所有的前端开发工程师都会使用的一个插件，它非常出名，有非常多的功能能让你大大地提高开发速率。可以到这里 [emmet](http://www.emmet.io/) 看下 DEMO 和介绍，感受下它的魅力。
 
@@ -67,3 +67,5 @@ BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的�
 ##[JavaScript Completions](https://packagecontrol.io/packages/JavaScript%20Completions)
 
 补全原生javascript的一些方法和属性，非常快捷方便
+
+后面会继续补充...也欢迎留言说出你觉得不错的插件...谢谢~

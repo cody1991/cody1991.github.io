@@ -44,6 +44,9 @@ Preferences > Setting - User 是个人的设置，在 Preferences > Setting - De
 
 接下来上面提到过的就不赘述了，更多的是介绍插件本身。
 
+##[HTML-CSS-JS-Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify)
+
+这个插件是我自己非常非常喜欢的一个插件，主要功能就是把你的 HTML CSS JAVASCRIPT 代码一键 [ alt + shift + H ] 格式化成符合规范的代码格式，自己一边敲代码一边 ctrl + s 和  alt + shift + H ，代码看起来整整齐齐非常舒坦 (没错我是个处女座) 。安装这个插件之前需要先安装 [nodejs](https://nodejs.org/en/) 环境。
 
 ##[emmet-sublime](https://github.com/sergeche/emmet-sublime)
 
@@ -61,4 +64,6 @@ sublime text3的侧边栏文件夹的右键功能是非常少的，只有几个�
 
 BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的括号，更好的看清代码结构
 
-##[HTML-CSS-JS-Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify)
+##[JavaScript Completions](https://packagecontrol.io/packages/JavaScript%20Completions)
+
+补全原生javascript的一些方法和属性，非常快捷方便

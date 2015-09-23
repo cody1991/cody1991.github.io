@@ -68,4 +68,25 @@ BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的�
 
 补全原生javascript的一些方法和属性，非常快捷方便
 
+下面是我个人的简单 sublime text 配置
+
+	{
+		"always_show_minimap_viewport": true,
+		"bold_folder_labels": true,
+		"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+		"font_size": 11,
+		"ignored_packages":
+		[
+			"Vintage"
+		],
+		"line_padding_bottom": 2,
+		"line_padding_top": 2,
+		"material_theme_accent_yellow": true,
+		"material_theme_small_tab": true,
+		"overlay_scroll_bars": "enabled",
+		"theme": "Material-Theme.sublime-theme",
+		"word_wrap":true,
+		"highlight_line":true
+	}
+
 后面会继续补充...也欢迎留言说出你觉得不错的插件...谢谢~

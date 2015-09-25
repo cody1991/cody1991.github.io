@@ -64,10 +64,6 @@ sublime text3的侧边栏文件夹的右键功能是非常少的，只有几个�
 
 BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的括号，更好的看清代码结构
 
-##[JavaScript Completions](https://packagecontrol.io/packages/JavaScript%20Completions)
-
-补全原生javascript的一些方法和属性，非常快捷方便
-
 下面是我个人的简单 sublime text 配置
 
 	{

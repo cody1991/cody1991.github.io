@@ -16,6 +16,8 @@ layout: default
     <div class="ds-thread"></div>
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
+    var categoryEle = {{page.category}};
+    categoryEle.className += ' active';
     var duoshuoQuery = {short_name:"sysutangzx"};
       (function() {
         var ds = document.createElement('script');

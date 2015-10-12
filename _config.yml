@@ -1,9 +1,9 @@
 # Site settings
 encoding: utf-8
-title: Home
+title: Cody
 description: cody1991的个人博客
-baseurl: "http://cody1991.github.io" 
-# baseurl: ''
+# baseurl: "http://cody1991.github.io" 
+baseurl: ''
 github_username:  cody1991
 paginate: 6
 paginate_path: "/page:num"

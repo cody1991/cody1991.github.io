@@ -98,7 +98,9 @@ $(document).ready(function() {
 
         function init() {
             $("#toTop").scrollToTop();
-            $('.book-images').unveil();
+            $('.book-images').unveil(200,function(){
+                $(this).removeClass('book-images');
+            });
             var siteNav = $('#site-nav');
 
             $(window).on('scroll', function() {

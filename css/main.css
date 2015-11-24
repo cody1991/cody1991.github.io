@@ -1,10 +1,3 @@
-@font-face {
-  font-size: 16px;
-  font-family: 'roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url(Roboto-Medium.ttf) format('truetype');
-}
 body {
   font-family: 'Microsoft YaHei', sans-serif;
   font-size: 16px;

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Sublime text guide"
-date:   2015-09-22 19:54:00
+date:   2015-12-15 15:57:00
 category: software
 ---
 
@@ -64,6 +64,10 @@ sublime text3的侧边栏文件夹的右键功能是非常少的，只有几个�
 
 BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的括号，更好的看清代码结构
 
+##[ColorPicker](https://github.com/weslly/ColorPicker)
+
+使用ctrl + shift + c可以调出取色板
+
 下面是我个人的简单 sublime text 配置
 
 	{
@@ -85,4 +89,26 @@ BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的�
 		"highlight_line":true
 	}
 
-后面会继续补充...也欢迎留言说出你觉得不错的插件...谢谢~
+下面讲讲一些常用的快捷键
+
+----
+
+##ctrl + p
+
+可以快速的打开你所输入的字符对应的文件
+
+##ctrl + r
+
+当你的一个JS文件很大，定义了很多方法的时候想去查找一个函数的定义，可以使用这条指令快速地找到对应方法的位置
+
+##ctrl + d
+
+选取当前对应的文字以及下一个相同的文字
+
+##ctrl + click
+
+点击的每个位置都会有一个光标可以让你去编辑
+
+##ctrl + F3
+
+选取和当前选取的文字相同的所有文本

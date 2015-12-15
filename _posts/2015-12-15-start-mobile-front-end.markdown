@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "start mobile front end"
+title:  "Start mobile front end"
 date:   2015-12-15 17:46:00
 category: frontend
 ---

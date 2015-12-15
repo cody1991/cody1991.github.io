@@ -297,6 +297,8 @@ a:hover {
 .post-content ol,
 .post-content ul {
   padding-left: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 .post-content img {
   border: 1px solid #e9e9e9;

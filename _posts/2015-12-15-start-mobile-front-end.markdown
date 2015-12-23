@@ -19,7 +19,7 @@ category: frontend
 
 后面我们定义一个例如 640px 设计稿上字体大小为32px的元素的时候，就可以使用 ((32 / 2) / 100) = 0.16rem 来定义了。
 
-而最近新开的 [demo-js](https://github.com/cody1991/cody1991.github.io/tree/master/source/2015.12.15/demo-js/) 模板则是用一段如图所示的 [common.js](https://github.com/cody1991/cody1991.github.io/tree/master/source/2015.12.15/demo-js/js/common.js) 代码来完成。参考[使用rem布局手机页面](http://www.grycheng.com/?p=1249)
+而最近新开的 [demo-js](https://github.com/cody1991/cody1991.github.io/tree/master/source/2015.12.15/demo-js/) 模板 <del>则是用一段如图所示的 [common.js](https://github.com/cody1991/cody1991.github.io/tree/master/source/2015.12.15/demo-js/js/common.js) 代码来完成</del> ，则是在html文件的 head 头插入了下面一段代码(因为考虑有时候加载js文件时间过长，那个时候定义的一些 rem css 样式可能出现错乱，所以把这段代码移到了 head 头部，css文件之后进行加载，现在common.js文件是空的 `2015.12.23`)。参考[使用rem布局手机页面](http://www.grycheng.com/?p=1249)
 
 <img src="{{site.baseurl}}/source/2015.12.15/2.png">
 
@@ -143,4 +143,6 @@ html文件我都是放在根目录下的，然后把需要引入的css文件放�
                 document.removeEventListener('touchstart', musicPlay);
             }
 
-4. 待续...
+4. 还有很多的坑可以自己慢慢摸索吧~
+
+# End

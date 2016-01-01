@@ -7,7 +7,7 @@ category: frontend
 
 ## 1. 规范说明 
 
-此规范用于 [深圳市暖柚科技有限公司](http://www.impingo.me/) 日常前端开发使用的规范，参考[前端规范 | Front-End-Standards.com](http://front-end-standards.com/)而来。
+此规范用于 [深圳市暖柚科技有限公司](http://www.impingo.me/) 日常前端开发使用的规范，参考[前端规范 Front-End-Standards.com](http://front-end-standards.com/)而来。
 
 制定前端开发规范，意在统一日常前端开发的编码规范和风格，提高代码的规范性和可维护性，也能让技术得到沉淀，减少重复的工作。
 

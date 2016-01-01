@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Front end standards"
-date:   2016-12-15 18:16:00
+date:   2016-1-1 18:16:00
 category: frontend
 ---
 

@@ -5,6 +5,7 @@ date:   2016-1-1 18:16:00
 category: frontend
 ---
 
+# 减少维护成本，最新的规范在 [html5-boilerplate](https://github.com/bear-front-end/html5-boilerplate) 
 
 ## 1. 规范说明 
 

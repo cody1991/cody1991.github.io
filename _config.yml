@@ -1,6 +1,6 @@
 # Site settings
 encoding: utf-8
-title: Cody
+title: cody
 description: cody1991的个人博客
 baseurl: "http://cody1991.github.io" 
 # baseurl: ''

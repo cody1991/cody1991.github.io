@@ -25,6 +25,12 @@ a {
 a:hover {
   color: #4b42a3;
 }
+table {
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 /*
     头部样式
 */

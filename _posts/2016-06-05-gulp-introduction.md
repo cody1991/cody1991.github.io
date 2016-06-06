@@ -5,14 +5,16 @@ date:   2016-06-05 14:30:00
 category: frontend
 ---
 
-#文章背景
+## 文章背景
+
 
 在我之前的博客 [start-mobile-front-end](http://cody1991.github.io/frontend/2015/12/15/start-mobile-front-end.html) 有提到日常使用的项目开发简单的模板，后面整合了 [可伸缩布局方案-lib-flexible](https://github.com/amfe/lib-flexible) 对模板进行了简单的修改，放在
 [html5-boilerplate](https://github.com/bear-front-end/html5-boilerplate) 维护。
 
 这里是把这套模板和 gulp 进行整合。
 
-#gulp 介绍
+## gulp 介绍
+
 
 打开 [gulp中文网]() 的源码，我们可以 `title` 是这样写的：
 
@@ -25,7 +27,8 @@ category: frontend
 这里不进行太多关于 gulp 的讨论，可以看一些别人的讨论和简介： [前端框架可以直接使用，为何需要nodejs/gulp等工具?](https://www.zhihu.com/question/30597893) , [使用Gulp构建网站小白教程](https://www.h5jun.com/post/gulp-build.html) , [gulp-book](https://github.com/nimojs/gulp-book) 看看官网以及网上一些其他教程。
 
 
-#正文
+## 正文
+
 
 gulp的配置文件是 `gulpfile.js` ，我们手动添加这个文件，之后进行命令
 

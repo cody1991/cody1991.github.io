@@ -11,7 +11,7 @@ category: vue
 
 [代码地址](https://github.com/cody1991/learn/tree/gh-pages/vue-learn/using-vue-template/vue-tutorial)
 
-[在线预览](http://cody1991.github.io/learn/vue-learn/using-vue-template/vue-tutorial/dist/index.html)
+[在线预览](http://cody1991.github.io/learn/vue-learn/using-vue-template/vue-tutorial/without-backend/index.html)
 
 ### 使用vue-cli
 

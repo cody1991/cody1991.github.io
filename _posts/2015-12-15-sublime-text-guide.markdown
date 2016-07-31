@@ -2,7 +2,7 @@
 layout: post
 title:  "Sublime text guide"
 date:   2015-12-15 15:57:00
-category: software
+category: other
 ---
 
 这篇文字从0开始介绍 [sublime text3](http://www.sublimetext.com/) 的安装和部分插件配置。首先进入官网安装自己的系统来下载对应的安装包

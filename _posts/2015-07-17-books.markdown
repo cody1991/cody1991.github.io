@@ -2,7 +2,7 @@
 layout: post
 title:  "Books"
 date:   2015-07-17 17:25:00
-category: private
+category: other
 ---
 
 

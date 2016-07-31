@@ -11,13 +11,10 @@
             </a>
             <div class="trigger">
                 {% for category in site.categories %}
-                    <a class="page-link" id = "{{category | first }}" href="{{ '/category.html#' | prepend:site.baseurl }}{{ category | first }}">
+                <a class="page-link" id="{{category | first }}" href="{{ '/category.html#' | prepend:site.baseurl }}{{ category | first }}">
                         {{ category | first }}
-                    </a> 
-                {% endfor %}
+                    </a> {% endfor %}
             </div>
         </nav>
     </div>
 </header>
-
-

@@ -508,6 +508,6 @@ category: vue
         return {
             totalTime:0
         }
-    },
+    }
 
-# 待续，后面开始编写后台。
+[后台配合 mongodb 的代码可以在这里查看](https://github.com/cody1991/learn/commit/62e84b9afe914c17ea7961c76fd90171b03336e4)

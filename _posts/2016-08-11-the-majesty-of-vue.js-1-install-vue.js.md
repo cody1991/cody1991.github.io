@@ -26,13 +26,13 @@ global variable.
 
 You can download two versions of Vue.js:
 
-* 1. 开发版本： [http://vuejs.org/js/vue.js](http://vuejs.org/js/vue.js)
+* 开发版本： [http://vuejs.org/js/vue.js](http://vuejs.org/js/vue.js)
 
-* 1. Development Version from [http://vuejs.org/js/vue.js](http://vuejs.org/js/vue.js)
+* Development Version from [http://vuejs.org/js/vue.js](http://vuejs.org/js/vue.js)
 
-* 2. 生产版本： [http://vuejs.org/js/vue.min.js](http://vuejs.org/js/vue.min.js)
+* 生产版本： [http://vuejs.org/js/vue.min.js](http://vuejs.org/js/vue.min.js)
 
-* 2. Production Version from [http://vuejs.org/js/vue.min.js](http://vuejs.org/js/vue.min.js)
+* Production Version from [http://vuejs.org/js/vue.min.js](http://vuejs.org/js/vue.min.js)
 
 提示：在开发的时候不要使用压缩后的版本，你会错过很多常见问题对应的非常好的错误提示。
 

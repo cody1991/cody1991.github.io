@@ -290,7 +290,8 @@ table {
 .post-content h1,
 .post-content h2,
 .post-content h3 {
-  border-bottom: 1px solid #e9e9e9;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1em;
 }
 .post-content a {
   color: #835092;

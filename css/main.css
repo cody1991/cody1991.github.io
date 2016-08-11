@@ -166,7 +166,7 @@ table {
     包裹层
 */
 .wrapper {
-  max-width: calc(1000px);
+  max-width: calc(1280px);
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
@@ -329,7 +329,7 @@ table {
 }
 .post-content pre,
 .post-content code {
-  font-size: 12px;
+  font-size: 14px;
   border: 1px solid #e9e9e9;
   border-radius: 3px;
   background-color: #eeeeee;

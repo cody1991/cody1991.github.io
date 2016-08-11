@@ -5,7 +5,7 @@ date:   2016-08-11 15:41:00
 category: vue
 ---
 
-译者注：本章所有的代码可以在 [1-getting-started](https://github.com/cody1991/awesome-vue/tree/master/the-majesty-of-vue.js-ch/code/1-getting-started) 查看
+译者注：本章所有的代码可以在 [2-getting-started](https://github.com/cody1991/awesome-vue/tree/master/the-majesty-of-vue.js-ch/code/2-getting-started) 查看
 
 # 开始
 
@@ -251,4 +251,4 @@ instantly whenever the user types or changes his name. Good luck and have fun!
 
     </html>
 
-译者注：本章所有的代码可以在 [1-getting-started](https://github.com/cody1991/awesome-vue/tree/master/the-majesty-of-vue.js-ch/code/1-getting-started) 查看
+译者注：本章所有的代码可以在 [2-getting-started](https://github.com/cody1991/awesome-vue/tree/master/the-majesty-of-vue.js-ch/code/2-getting-started) 查看

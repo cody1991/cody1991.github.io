@@ -287,12 +287,18 @@ table {
 .post-content {
   margin-bottom: 30px;
 }
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  border-bottom: 1px solid #e9e9e9;
+}
 .post-content a {
   color: #835092;
 }
 .post-content p {
   text-indent: 2em;
   color: #222222;
+  margin-bottom: 1em;
 }
 .post-content ol {
   list-style-type: decimal;
@@ -305,6 +311,10 @@ table {
   padding-left: 2em;
   padding-top: 1em;
   padding-bottom: 1em;
+}
+.post-content ol p,
+.post-content ul p {
+  text-indent: 0;
 }
 .post-content img {
   border: 1px solid #e9e9e9;

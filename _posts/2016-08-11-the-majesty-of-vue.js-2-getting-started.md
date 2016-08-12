@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The majesty of vue.js 2-getting-started.js"
+title:  "The majesty of vue.js 2-getting-started"
 date:   2016-08-11 15:41:00
 category: vue
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The majesty of vue.js 4-list-rendering"
+title:  "The majesty of vue.js 5-interactivity"
 date:   2016-08-17 15:12:00
 category: vue
 ---

@@ -31,7 +31,7 @@ Package Control 的下载方式很简单，使用 ctrl + ` 或者 菜单栏里�
 
 ----
 
-##[Material-theme](https://github.com/equinusocio/material-theme)
+## [Material-theme](https://github.com/equinusocio/material-theme)
 
 sublime text的默认主题还是有点看不过去的，可以在菜单栏的 Perferences > Color Scheme 中更换，个人蛮喜欢 material theme 这个主题的，如果你也喜欢的话可以自行去下载安装。安装的方式是在菜单栏找到 Preferences > Package Control 选择 install Package 或者直接 ctrl + shift + p 之后键入 install Package ，然后键入插件名，它就会自动帮你下载安装了。之后我们可以按照它给的提示，打开 Preferences > Setting - User ，键入 
 
@@ -99,27 +99,27 @@ BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的�
 
 ----
 
-##ctrl+shift+p
+## ctrl+shift+p
 
 package control的一些控制命令
 
-##ctrl + p
+## ctrl + p
 
 可以快速的打开你所输入的字符对应的文件
 
-##ctrl + r
+## ctrl + r
 
 当你的一个JS文件很大，定义了很多方法的时候想去查找一个函数的定义，可以使用这条指令快速地找到对应方法的位置
 
-##ctrl + d
+## ctrl + d
 
 选取当前对应的文字以及下一个相同的文字
 
-##ctrl + click
+## ctrl + click
 
 点击的每个位置都会有一个光标可以让你去编辑
 
-##ctrl + F3
+## ctrl + F3
 
 选取和当前选取的文字相同的所有文本
 

@@ -64,13 +64,15 @@ sublime text3的侧边栏文件夹的右键功能是非常少的，只有几个�
 
 BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的括号，更好的看清代码结构
 
-##[ColorPicker](https://github.com/weslly/ColorPicker)
+##[Less](https://github.com/danro/LESS-sublime)
 
-使用ctrl + shift + c可以调出取色板
+书写less时候的高亮显示
 
-##[cssrem](https://github.com/flashlizi/cssrem)
+##[git](https://github.com/kemayo/sublime-text-git)
 
-可以把px单位自动转化成rem单位，也可以在设置项里面跳转转化比例，非常好用
+把git的功能集成到sublime text里面，非常方便好用
+
+---
 
 下面是我个人的简单 sublime text 配置
 
@@ -96,6 +98,10 @@ BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的�
 下面讲讲一些常用的快捷键
 
 ----
+
+##ctrl+shift+p
+
+package control的一些控制命令
 
 ##ctrl + p
 

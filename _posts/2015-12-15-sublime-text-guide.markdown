@@ -44,31 +44,31 @@ Preferences > Setting - User 是个人的设置，在 Preferences > Setting - De
 
 接下来上面提到过的就不赘述了，更多的是介绍插件本身。
 
-##[HTML-CSS-JS-Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify)
+## [HTML-CSS-JS-Prettify](https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify)
 
 这个插件是我自己非常非常喜欢的一个插件，主要功能就是把你的 HTML CSS JAVASCRIPT 代码一键 [ alt + shift + H ] 格式化成符合规范的代码格式，自己一边敲代码一边 ctrl + s 和  alt + shift + H ，代码看起来整整齐齐非常舒坦 (没错我是个处女座) 。安装这个插件之前需要先安装 [nodejs](https://nodejs.org/en/) 环境。
 
-##[Emmet-sublime](https://github.com/sergeche/emmet-sublime)
+## [Emmet-sublime](https://github.com/sergeche/emmet-sublime)
 
 emmet sublime 基本是所有的前端开发工程师都会使用的一个插件，它非常出名，有非常多的功能能让你大大地提高开发速率。可以到这里 [emmet](http://www.emmet.io/) 看下 DEMO 和介绍，感受下它的魅力。
 
-##[SideBarEnhancements](https://github.com/titoBouzout/SideBarEnhancements)
+## [SideBarEnhancements](https://github.com/titoBouzout/SideBarEnhancements)
 
 sublime text3的侧边栏文件夹的右键功能是非常少的，只有几个，而这个插件的功能就是扩展了侧边栏文件夹的功能，非常有用。
 
-##[AutoFileName](https://github.com/BoundInCode/AutoFileName)
+## [AutoFileName](https://github.com/BoundInCode/AutoFileName)
 
 这个主要的功能是按照路径自动补全文件名字，非常有用吧
 
-##[BracketHighlighter](https://github.com/facelessuser/BracketHighlighter)
+## [BracketHighlighter](https://github.com/facelessuser/BracketHighlighter)
 
 BracketHighlighter 的功能是能高亮比如[], (), {}, "", ''这些对应的括号，更好的看清代码结构
 
-##[Less](https://github.com/danro/LESS-sublime)
+## [Less](https://github.com/danro/LESS-sublime)
 
 书写less时候的高亮显示
 
-##[git](https://github.com/kemayo/sublime-text-git)
+## [git](https://github.com/kemayo/sublime-text-git)
 
 把git的功能集成到sublime text里面，非常方便好用
 

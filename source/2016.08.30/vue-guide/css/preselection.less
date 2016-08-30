@@ -1,0 +1,170 @@
+@import (inline) './normalize.css';
+body {
+    background-color: #010017;
+}
+
+.container {
+    user-select: none;
+    font-family: 'Microsoft YaHei', sans-serif;
+    position: relative;
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 0.32rem;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+// 设计稿是 750px
+// 1rem = 75px
+@base: 75rem;
+.demo {
+    text-align: center;
+    .btn {
+        width: 560 / @base;
+    }
+}
+
+.radio-wrapper {
+    .list {
+        padding-left: 18/@base;
+        padding-right: 18/@base;
+        padding-top: 35/@base;
+        li {
+            background-color: #fff;
+            width: 346/@base;
+            height: 488/@base;
+            position: relative;
+            margin-bottom: 20/@base;
+            float: left;
+            display: table;
+            &:nth-child(odd) {
+                // margin-right: 10/@base;
+            }
+            &:nth-child(even) {
+                float: right;
+            }
+            .live {
+                position: absolute;
+                background-color: #2aa2fe;
+                width: 150/@base;
+                height: 50/@base;
+                border-top-right-radius: 100px;
+                border-bottom-right-radius: 100px;
+                left: -11/@base;
+                top: 29/@base;
+                z-index: 99;
+                display: table;
+                p {
+                    color: #fff;
+                    font-size: 24/@base;
+                    text-align: center;
+                    vertical-align: middle;
+                    display: table-cell;
+                }
+            }
+            .link {
+                display: block;
+                width: 324/@base;
+                height: 324/@base;
+                position: absolute;
+                left: 11/@base;
+                right: 11/@base;
+                top: 10/@base;
+            }
+            .user {
+                width: 324/@base;
+                display: block;
+            }
+            .play {
+                width: 60/@base;
+                position: absolute;
+                left: 30/@base;
+                top: 250/@base;
+            }
+            .add {
+                position: absolute;
+                font-size: 30/@base;
+                font-weight: bold;
+                color: #f919b6;
+                z-index: 99;
+                right: 30/@base;
+                top: 310/@base;
+                -webkit-animation: fadeOutUp 2s .2s ease both;
+            }
+            @-webkit-keyframes fadeOutUp {
+                0% {
+                    opacity: 1;
+                    -webkit-transform: translateY(0)
+                }
+                30% {
+                    opacity: 0.7;
+                    font-size: 40/@base;
+                    -webkit-transform: translateY(-15px)
+                }
+                100% {
+                    opacity: 0;
+                    -webkit-transform: translateY(-30px)
+                }
+            }
+            .user-wrapper {
+                position: absolute;
+                left: 11/@base;
+                top: 350/@base;
+                width: 320/@base;
+                .name {
+                    color: #333;
+                    font-size: 26/@base;
+                    display: inline-block;
+                    width: 150/@base;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                .num {
+                    color: #f919b6;
+                    font-size: 26/@base;
+                    display: inline-block;
+                    float: right;
+                    // margin-left: 200/@base;
+                }
+            }
+            .do-btn {
+                background-color: #f919b6;
+                text-align: center;
+                border-radius: 15/@base;
+                width: 306/@base;
+                height: 70/@base;
+                bottom: 20/@base;
+                left: 20/@base;
+                position: absolute;
+                display: table;
+                p {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-size: 30/@base;
+                    color: #fff;
+                }
+            }
+            .had-btn {
+                background-color: #ffb9e8;
+                text-align: center;
+                border-radius: 15/@base;
+                width: 306/@base;
+                height: 70/@base;
+                bottom: 20/@base;
+                left: 20/@base;
+                position: absolute;
+                display: table;
+                p {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-size: 30/@base;
+                    color: rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+    }
+}

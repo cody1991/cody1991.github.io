@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>vue guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <link rel="stylesheet" href="./css/preselection.css?04" />
+    <script src="http://7xnv74.com1.z0.glb.clouddn.com/static/lib/flexible/flexible.js"></script>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="radio-wrapper">
+            <!--             
+            <ul class="list clearfix">
+                <li>
+                    <img src="./images/ex-1.png" class="user">
+                    <img src="./images/play.png" class="play">
+                    <div class="user-wrapper">
+                        <div class="name">凌兒</div>
+                        <div class="num">3280</div>
+                    </div>
+                    <div class="do-btn">
+                        <p>支持</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./images/ex-4.png" class="user">
+                    <img src="./images/play.png" class="play">
+                    <p class="add">+1</p>
+                    <div class="user-wrapper">
+                        <div class="name">壹琳10</div>
+                        <div class="num">3180</div>
+                    </div>
+                    <div class="had-btn">
+                        <p>今日已支持</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="live">
+                        <p>观看直播 ></p>
+                    </div>
+                    <img src="./images/ex-2.png" class="user">
+                    <img src="./images/play.png" class="play">
+                    <div class="user-wrapper clearfix">
+                        <div class="name">吴文超</div>
+                        <div class="num">3072</div>
+                    </div>
+                    <div class="do-btn">
+                        <p>支持</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./images/ex-3.png" class="user">
+                    <img src="./images/play.png" class="play">
+                    <div class="user-wrapper">
+                        <div class="name">赫连晓旭Cherryksks</div>
+                        <div class="num">2976</div>
+                    </div>
+                    <div class="do-btn">
+                        <p>支持</p>
+                    </div>
+                </li>
+            </ul> 
+            -->
+            <ul class="list clearfix" v-cloak>
+                <!-- <li v-for="anchor in anchorInfo | orderBy supportCntFn"> -->
+                <li v-for="anchor in anchorInfo">
+                    <a class="link" @click="jumpVideo(anchor)">
+                        <div class="live" v-show="living | getLiving anchor" @click.stop="jumpLive(anchor)">
+                            <p>观看直播 ></p>
+                        </div>
+                        <img :src="anchor.userID | getUserImg" class="user">
+                        <img src="./images/play.png" class="play">
+                        <p class="add" v-show="anchor.showAdd">+1</p>
+                    </a>
+                    <div class="user-wrapper">
+                        <div class="name" v-text="anchor.anchorName" @click="jumpProfile(anchor.userID)"></div>
+                        <div class="num" v-text="anchor.supportCnt"></div>
+                    </div>
+                    <template v-if="voteStatus | getVoteStatus anchor">
+                        <div class="had-btn">
+                            <p>今日已支持</p>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="do-btn" @click="singerVote(anchor)">
+                            <p>支持</p>
+                        </div>
+                    </template>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="http://7xnv74.com1.z0.glb.clouddn.com/static/lib/fastclick/fastclick.min.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-resource.min.js"></script>
+    <script src="./js/preselection.js?06"></script>
+</body>
+
+</html>

@@ -11,7 +11,7 @@ category: vue
 
 公司有一个项目，其中一部分的截图如下：
 
-<img src="http://cody1991.github.io/source/2016.08.30/1.png">
+![](http://cody1991.github.io/source/2016.08.30/1.png)
 
 主要需求如下：
 
@@ -95,7 +95,7 @@ category: vue
 
 大体上的HTML结构就是这样，配合CSS样式，可以得到下面的输出结果：
 
-<img src="http://cody1991.github.io/source/2016.08.30/2.png">
+![](http://cody1991.github.io/source/2016.08.30/2.png)
 
 当然现在还都是静态数据。
 
@@ -122,7 +122,10 @@ category: vue
         attachFastClick(document.body);
 
         var windowLocation = window.location,
-            selfUserID = lib.urlParams(windowLocation)['userID'];
+            selfUserID = lib.urlParams(windowLocation)['userID'],
+            selfSessionID = lib.urlParams(windowLocation)['sessionID'],
+            selfSessionToken = lib.urlParams(windowLocation)['sessionToken'],
+            selfPeerID = lib.urlParams(windowLocation)['peerID'];
 
         var app = new Vue({
             el: '#app',
@@ -153,6 +156,8 @@ category: vue
 `lib` 对象主要放着一些基础的方法或者变量，在这里只有一个解析页面地址参数的函数 `urlParams` ，因为后面我们需要通过页面地址url获取投票用户的userID，即后面看到的
 
     selfUserID = lib.urlParams(windowLocation)['userID'];
+
+`selfSessionID`,`selfSessionToken`,`selfPeerID`不用在意太多，到时候url没有传入这几个也没关系。
 
 而 `window.onload` 开头的这段：
 
@@ -190,7 +195,7 @@ category: vue
 
 `res.data` 会装载后台返回给我们的数据
 
-<img src="http://cody1991.github.io/source/2016.08.30/3.png">
+![](http://cody1991.github.io/source/2016.08.30/3.png)
 
 可以看到一些返回的信息，而我们想要的数据在 `res.data` 里面，返回的格式是和后台协商好的。
 
@@ -198,7 +203,7 @@ category: vue
 
 在`res.data.rtn`为0代表成功的情况下，我们调用vue的 `$set` 方法，设置`anchorInfo`的值，把`res.data.data`赋给它。在这里使用`$set`方法才能保证`anchorInfo`变量的值在vue里面是响应式能实时更新的。
 
-<img src="http://cody1991.github.io/source/2016.08.30/4.png">
+![](http://cody1991.github.io/source/2016.08.30/4.png)
 
 接下来我们修改前面提到的HTML结构吧。我们从 `ul` 标签开始修改。
 
@@ -218,7 +223,7 @@ category: vue
 
 接下来我们看到了 `li` 标签里面有vue指令 `v-for`，在这里它会循环遍历vue实例的数据 `anchorInfo` 数组，每次遍历的变量别名为 `anchor`。
 
-<img src="http://cody1991.github.io/source/2016.08.30/5.png">
+![](http://cody1991.github.io/source/2016.08.30/5.png)
 
 在上图可以看到, `ul` 标签下面生成了十个`li`标签，正好是我们 `anchorInfo` 数组的长度。我们接着给 `li` 标签里面添加内容。
 
@@ -269,7 +274,7 @@ category: vue
 
 我们继续在 `li` 标签里面添加了这样的代码，`template` 可以配合 vue的指令 `v-if` 一同使用。在这里你可能稍微讲解下 `v-if="voteStatus | getVoteStatus anchor"` 是来判断用户是否已经投票了，已经投票的话显示 `.had-btn` 元素，否则显示 `.do-btn` 元素，在后面会补充上。
 
-<img src="http://cody1991.github.io/source/2016.08.30/6.png">
+![](http://cody1991.github.io/source/2016.08.30/6.png)
 
 可以看到我们大部分的UI界面已经完成了。看看其实寥寥几十段代码而已，就把通过jquery来拼错DOM的繁杂方法完成了。
 
@@ -313,7 +318,7 @@ category: vue
 
 我们和上面一样，把返回的数组 `res.data.rtn`代表成功的情况下，给`livingInfo`数组赋值`res.data.data`。
 
-<img src="http://cody1991.github.io/source/2016.08.30/7.png">
+![](http://cody1991.github.io/source/2016.08.30/7.png)
 
 看看我们返回的jsonp数据。我们主要关注 `state` 变量，只有值为 1 的时候代表正在直播，所以我们现在修改一些HTML结构：
 
@@ -342,8 +347,203 @@ category: vue
 
 然后我们使用`forEach`方法遍历 `livingInfo` 数组，并且判断此刻 `living.createUserID` 和 `curUserID` 相等的时候，看看它的 `state` 的属性，如果为1的话，`isLiving` 设置为真。否则其他情况返回 `false`。（这里可以不用 `forEach` 方法，因为在找到对应的 `living` 的时候， `forEach` 并不能退出循环。）
 
-<img src="http://cody1991.github.io/source/2016.08.30/8.png">
+![](http://cody1991.github.io/source/2016.08.30/8.png)
 
 如上图，现在正在直播的用户就能显示出观看直播这个标签了。
+
+接下来我们来获取是否可以投票的信息。
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            ...
+            queryVoteStatusUrl: "http://a.impingo.me/activity/queryVoteStatus",
+            anchorUserID: '',
+            todayHadVote: false
+            ...
+        },
+        ready: function() {
+            ...
+            this.queryVoteStatus();
+            ...
+        },
+        methods: {
+            ...
+            queryVoteStatus: function() {
+                this.$http.jsonp(this.queryVoteStatusUrl + '?userID=' + selfUserID)
+                    .then(function(res) {
+                        var rtnData = res.data;
+                        if (rtnData.rtn == 0) {
+                            this.todayHadVote = false;
+                        } else if (rtnData.rtn == 1) {
+                            this.todayHadVote = true;
+                            this.anchorUserID = rtnData.data.anchorUserID;
+                        }
+                    })
+                    .catch(function(res) {
+                        console.info('网络失败');
+                    });
+            },
+            ...
+        },
+        filters: {
+            ...
+            getVoteStatus: function(val, anchor) {
+                if (anchor.userID == this.anchorUserID) {
+                    // 可支持
+                    return true;
+                } else {
+                    // 不可支持
+                    return false;
+                }
+            }
+            ...
+        },
+    });
+
+上面是我们添加的新代码。 `queryVoteStatusUrl` 代表着获取是否已投票的接口地址(这个地址后面需要加上当前投票用户的userID，我们可以自己在地址后面添加 `userID=10003`等，userID从10000开始到11000都可以用来测试)。`anchorUserID` 为空字符串，后面获取数据的时候如果已投票，会把投给的那个人的ID赋值给它。 `todayHadVote` 代表今天是否已经投票了，如果已经投票的话禁止继续投票。
+
+所以我们在vue实例的 `methods` 对象可以看到 `queryVoteStatus` 方法，如果 `res.data.rtn` 为0的时候，代表今天还可以投票，进行下面的操作：
+
+    this.todayHadVote = true;
+    this.anchorUserID = rtnData.data.anchorUserID;
+
+最后就是添加的 `getVoteStatus` 过滤器，如下图，如果 `voteStatus` 为真，今日已支持按钮会显示出来，否则显示支持按钮
+
+    <template v-if="voteStatus | getVoteStatus anchor">
+        <div class="had-btn">
+            <p>今日已支持</p>
+        </div>
+    </template>
+    <template v-else>
+        <div class="do-btn">
+            <p>支持</p>
+        </div>
+    </template>
+
+
+`getVoteStatus` 过滤器的代码如下：
+
+    getVoteStatus: function(val, anchor) {
+        if (anchor.userID == this.anchorUserID) {
+            // 可支持
+            return true;
+        } else {
+            // 不可支持
+            return false;
+        }
+    }
+
+只有当当前用户的ID和 `data` 里面的 `anchorUserID` 一致的时候，`voteStatus` 会返回 `true`。
+
+当然我们现在都还没有进行操作，所以所有的按钮都是支持按钮，我们可以在先修改成下面这样：自己把 `todayHadVote` 设置为 `true` ，而 `anchorUserID` 设置一个存在的用户ID来看效果（然后记得撤销修改）
+
+    if (rtnData.rtn == 0) {
+        this.todayHadVote = true;
+        this.anchorUserID = 1089536;
+    } else if (rtnData.rtn == 1) {
+        this.todayHadVote = true;
+        this.anchorUserID = rtnData.data.anchorUserID;
+    }
+
+截图如下：
+
+![](http://cody1991.github.io/source/2016.08.30/9.png)
+
+接下来还有一个小的需求，就是每隔一段时间重新拉取用户的信息和是否在直播的状态，添加下面的代码：
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            ...
+            setIntervalGetAnchorInfo: null,
+            setIntervalGetLiveStatus: null,
+            intervalDuration: 60 * 1000,
+            ...
+        },
+        ready: function() {
+            ...
+            this.initSetTimeout();
+            ...
+        },
+        methods: {
+            ...
+            initSetTimeout: function() {
+                var that = this;
+                setIntervalGetAnchorInfo = setInterval(function() {
+                    that.getAnchorInfo();
+                }, that.intervalDuration);
+                setIntervalGetLiveStatus = setInterval(function() {
+                    that.getLiveStatus();
+                }, that.intervalDuration);
+            },
+            ...
+        },
+    });
+
+获取用户信息的定时器 `setIntervalGetAnchorInfo` 和获取直播状态的定时器 `setIntervalGetLiveStatus`，初始化定时器的 `initSetTimeout` 方法。
+
+接下来就开始讲解交互部分，首先是投票部分。
+
+    <div class="do-btn" @click="singerVote(anchor)">
+        <p>支持</p>
+    </div>
+
+给支持按钮添加一个点击事件，监听函数是 `singerVote` ，把当前用户当做参数传入。
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            ....
+            singerVoteUrl: "http://a.impingo.me/activity/singerVote",
+            ...
+        },
+        methods: {
+            ...
+            singerVote: function(anchor) {
+                var getUserID = selfUserID,
+                    getTargetUserID = anchor.userID;
+
+                if (this.todayHadVote) {
+                    console.info('每日仅支持一次！');
+                    return;
+                }
+
+                this.$http.jsonp(this.singerVoteUrl + '?userID=' + getUserID + '&targetUserID=' + getTargetUserID + '&sessionID=' + selfSessionID + '&sessionToken=' + selfSessionToken + '&peerID=' + selfPeerID)
+                    .then(function(res) {
+                        var rtnData = res.data,
+                            that = this;
+                        if (rtnData.rtn == 0) {
+                            // console.info(rtnData.msg);
+                            Vue.set(anchor, 'showAdd', true);
+                            anchor.supportCnt++;
+                            this.anchorUserID = getTargetUserID;
+                            this.todayHadVote = true;
+
+                            clearInterval(setIntervalGetAnchorInfo);
+
+                            // 点击投票，动画（2秒）以后，重新拉取直播状态以及直播信息
+                            setTimeout(function() {
+                                that.getAnchorInfo();
+                                that.getLiveStatus();
+
+                                setIntervalGetAnchorInfo = setInterval(function() {
+                                    that.getAnchorInfo();
+                                }, that.intervalDuration);
+                            }, 2000);
+
+                        } else if (rtnData.rtn == 2 || rtnData.rtn == 3 || rtnData.rtn == 1) {
+                            console.info(rtnData.msg);
+                        }
+                    })
+                    .catch(function(res) {
+                        console.info('网络失败');
+                    });
+            },
+            ...
+        },
+    });
+
+我们可以看到
 
 编辑中...

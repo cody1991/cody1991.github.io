@@ -134,6 +134,29 @@ window.onload = function() {
                         console.info('网络失败');
                     });
             },
+            jumpProfile: function(userID) {
+                console.log(userID);
+                if (window.pingo_js) {
+                    window.pingo_js.jumpPage('profile://' + userID);
+                }
+            },
+            jumpVideo: function(anchor) {
+                var curUserID = anchor.userID;
+                window.location.href = 'http://api.impingo.me/static/singer/preselection-live.html?userID=' + curUserID; // 视频地址
+                return;
+            },
+            jumpLive: function(anchor) {
+                var curUserID = anchor.userID,
+                    curRoomID;
+                this.livingInfo.forEach(function(living) {
+                    if (living.createUserID === curUserID) {
+                        if (living.state == "1") {
+                            curRoomID = living.roomID;
+                        }
+                    }
+                });
+                window.location.href = 'http://api.impingo.me/miniSite/livePage?liveID=' + curRoomID;
+            }
         },
         filters: {
             getUserImg: function(val) {

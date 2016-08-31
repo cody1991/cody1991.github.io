@@ -5,8 +5,6 @@ date:   2016-08-30 17:45:00
 category: vue
 ---
 
-编辑中...
-
 # 一个简单的 vue.js 实践教程
 
 公司有一个项目，其中一部分的截图如下：
@@ -36,8 +34,6 @@ category: vue
 这里不会讲太多vue.js的基础，因为官网文档 [Getting Started](http://vuejs.org/guide/) 已经非常完善了。下面开始我们这个简单的vue实践吧。
 
 [源码地址](https://github.com/cody1991/cody1991.github.io/tree/master/source/2016.08.30/vue-guide)
-
-### 初始化
 
     <div class="container" id="app">
     </div>
@@ -544,6 +540,530 @@ category: vue
         },
     });
 
-我们可以看到
+我们可以看到上面是点击时候的处理。 `singerVoteUrl` 是投票接口的地址，`singerVote` 是对应的方法。
 
-编辑中...
+一开始看到，如果已经投票了，会反馈 每日仅支持一次！ 的提示语，由 `this.todayHadVote` 判断。否则，通过 vue-resource 发起请求。
+
+因为上面已经提到很多次了，这里就不赘述太多，我们看看主要的部分。
+
+我们应该还记得：
+
+    <p class="add" v-show="anchor.showAdd">+1</p>
+
+这个+1的动画的元素，点击投票，成功反馈以后，会进行
+
+    Vue.set(anchor, 'showAdd', true);
+
+这个操作，这个时候 `.add` 元素就会显示出来了。
+
+![](http://cody1991.github.io/source/2016.08.30/10.gif)
+
+    anchor.supportCnt++;
+    this.anchorUserID = getTargetUserID;
+    this.todayHadVote = true;
+
+之后我们是本地该用户的投票数 `++`,然后设置用户今天已投票，以及投票的人的ID
+
+    clearInterval(setIntervalGetAnchorInfo);
+
+之后我们清楚了获取用户信息的计时器
+
+    setTimeout(function() {
+        that.getAnchorInfo();
+        that.getLiveStatus();
+
+        setIntervalGetAnchorInfo = setInterval(function() {
+            that.getAnchorInfo();
+        }, that.intervalDuration);
+    }, 2000);
+
+并在两秒（+1动画结束以后），重新获取直播信息还有主播信息，并且重启获取用户信息的计时器。这里主要考虑的是，点击以后，用户的票数会改变，排序上可能会改变，这个时候重新从后台获取信息，能保证点击以后数据是最新的，排序也是正确的。而清除计时器的原因是，在这次交互后我们已经更新了数据，计时器就应该重置，在规定的 `that.intervalDuration` 时间以后再重新拉取。
+
+    this.$http.jsonp(this.singerVoteUrl + '?userID=' + getUserID + '&targetUserID=' + getTargetUserID + '&sessionID=' + selfSessionID + '&sessionToken=' + selfSessionToken + '&peerID=' + selfPeerID)
+
+另外我们在这里看到一窜拼接的地址， vue-resource 应该是可以传递 `data` 对象来传递参数的，试了几次不知道为什么都不行，待改善。
+
+    <div class="name" v-text="anchor.anchorName" @click="jumpProfile(anchor.userID)"></div>
+
+另外也有一个点击用户名跳转到他个人主页的需求，我们简单的增加一个方法就好了
+
+    jumpProfile: function(userID) {
+        console.log(userID);
+        if (window.pingo_js) {
+            window.pingo_js.jumpPage('profile://' + userID);
+        }
+    },
+
+这里的 `window.pingo_js` 不用考虑太多，是公司APP的接口，后面也有这样的代码，可无视。
+
+    <a class="link" @click="jumpVideo(anchor)">
+        <div class="live" v-show="living | getLiving anchor">
+            <p>观看直播 ></p>
+        </div>
+        <img :src="anchor.userID | getUserImg" class="user">
+        <img src="./images/play.png" class="play">
+        <p class="add" v-show="anchor.showAdd">+1</p>
+    </a>
+
+我们这里再给 `.link` 添加了一个 `jumpVideo` 的点击事件绑定。
+
+    jumpVideo: function(anchor) {
+        var curUserID = anchor.userID;
+        window.location.href = 'http://api.impingo.me/static/singer/preselection-live.html?userID=' + curUserID; // 视频地址
+        return;
+    },
+
+就只是简单的跳转到我们准备好的视频播放地址，传入用户的ID就好了。
+
+    <div class="live" v-show="living | getLiving anchor" @click.stop="jumpLive(anchor)">
+        <p>观看直播 ></p>
+    </div>
+
+而正在直播的用户，点击观看直播的时候，我们绑定了 `jumpLive` 事件。这里给 `@click` 加了一个修饰符 `.stop` ，即禁止冒泡，反正冒泡到父元素的 `jumpVideo` 点击事件函数。
+
+    jumpLive: function(anchor) {
+        var curUserID = anchor.userID,
+            curRoomID；
+        this.livingInfo.forEach(function(living) {
+            if (living.createUserID === curUserID) {
+                if (living.state == "1") {
+                    curRoomID = living.roomID;
+                }
+            }
+        });
+        window.location.href = 'http://api.impingo.me/miniSite/livePage?liveID=' + curRoomID;
+    } 
+
+而里面也是简单地循环遍历 `livingInfo` 数组来匹配对应的用户，找出它直播间的房号，跳转到直播页面（这里也有一个跳转到APP直播间的方法，省略掉了，降低理解成本和代码量）。
+
+大功告成。
+
+感觉需要改善的地方有：
+
+* `livingInfo` 数组和 `anchorInfo` 数组可以通过 computed 属性计算合成一个大的数组，那么很多的过滤器还有 `forEach` 遍历就可以省略掉了
+
+* 可以把整个 `ul` 下的部分做成一个组件
+
+* 文章可能描述的很啰嗦
+
+全部代码：
+
+[源码地址](https://github.com/cody1991/cody1991.github.io/tree/master/source/2016.08.30/vue-guide)
+
+guide.html:
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>vue guide</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta content="telephone=no" name="format-detection" />
+        <meta content="email=no" name="format-detection" />
+        <link rel="stylesheet" href="./css/guide.css" />
+        <script src="http://7xnv74.com1.z0.glb.clouddn.com/static/lib/flexible/flexible.js"></script>
+    </head>
+
+    <body>
+        <div class="container" id="app">
+            <div class="radio-wrapper">
+                <ul class="list clearfix" v-cloak>
+                    <li v-for="anchor in anchorInfo">
+                        <a class="link" @click="jumpVideo(anchor)">
+                            <div class="live" v-show="living | getLiving anchor" @click.stop="jumpLive(anchor)">
+                                <p>观看直播 ></p>
+                            </div>
+                            <img :src="anchor.userID | getUserImg" class="user">
+                            <img src="./images/play.png" class="play">
+                            <p class="add" v-show="anchor.showAdd">+1</p>
+                        </a>
+                        <div class="user-wrapper">
+                            <div class="name" v-text="anchor.anchorName" @click="jumpProfile(anchor.userID)"></div>
+                            <div class="num" v-text="anchor.supportCnt"></div>
+                        </div>
+                        <template v-if="voteStatus | getVoteStatus anchor">
+                            <div class="had-btn">
+                                <p>今日已支持</p>
+                            </div>
+                        </template>
+                        <template v-else>
+                            <div class="do-btn" @click="singerVote(anchor)">
+                                <p>支持</p>
+                            </div>
+                        </template>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="http://7xnv74.com1.z0.glb.clouddn.com/static/lib/fastclick/fastclick.min.js"></script>
+        <script src="./js/vue.min.js"></script>
+        <script src="./js/vue-resource.min.js"></script>
+        <script src="./js/guide.js"></script>
+    </body>
+
+    </html>
+
+guide.js
+
+    var lib = {
+        urlParams: function(url) {
+            var urlParamsList = {};
+            var params = url.search.replace(/^\?/, "").split('&'); //分开成各个不同的对像，去掉'&'
+            for (var i = 0; i < params.length; i++) {
+                var param = params[i];
+                var temp = param.split("=");
+                urlParamsList[temp[0]] = decodeURI(temp[1]);
+            }
+            return urlParamsList;
+        }
+    };
+
+    window.onload = function() {
+
+        var attachFastClick = Origami.fastclick;
+        attachFastClick(document.body);
+
+        var windowLocation = window.location,
+            selfUserID = lib.urlParams(windowLocation)['userID'],
+            selfSessionID = lib.urlParams(windowLocation)['sessionID'],
+            selfSessionToken = lib.urlParams(windowLocation)['sessionToken'],
+            selfPeerID = lib.urlParams(windowLocation)['peerID'];
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                anchorInfo: [],
+                livingInfo: [],
+                getAnchorInfoUrl: "http://a.impingo.me/activity/getAnchorInfo",
+                getLiveStatusUrl: "http://a.impingo.me/activity/getLiveStatus",
+                queryVoteStatusUrl: "http://a.impingo.me/activity/queryVoteStatus",
+                singerVoteUrl: "http://a.impingo.me/activity/singerVote",
+                anchorUserID: '',
+                todayHadVote: false,
+                setIntervalGetLiveStatus: null,
+                setIntervalGetAnchorInfo: null,
+                intervalDuration: 60 * 1000,
+            },
+            ready: function() {
+                this.getAnchorInfo();
+                this.getLiveStatus();
+                this.queryVoteStatus();
+                this.initSetTimeout();
+            },
+            methods: {
+                getAnchorInfo: function() {
+                    this.$http.jsonp(this.getAnchorInfoUrl)
+                        .then(function(res) {
+                            console.log(res);
+                            var rtnData = res.data;
+                            if (rtnData.rtn == 0) {
+                                this.$set('anchorInfo', rtnData.data);
+                            }
+                        })
+                        .catch(function(res) {
+                            console.info('网络失败');
+                        });
+                },
+                getLiveStatus: function() {
+                    this.$http.jsonp(this.getLiveStatusUrl)
+                        .then(function(res) {
+                            var that = this;
+                            var rtnData = res.data;
+                            if (rtnData.rtn == 0) {
+                                this.$set('livingInfo', rtnData.data);
+                            }
+                        })
+                        .catch(function(res) {
+                            console.info('网络失败');
+                        });
+                },
+                queryVoteStatus: function() {
+                    this.$http.jsonp(this.queryVoteStatusUrl + '?userID=' + selfUserID)
+                        .then(function(res) {
+                            var rtnData = res.data;
+                            if (rtnData.rtn == 0) {
+                                this.todayHadVote = false;
+                            } else if (rtnData.rtn == 1) {
+                                this.todayHadVote = true;
+                                this.anchorUserID = rtnData.data.anchorUserID;
+                            }
+                        })
+                        .catch(function(res) {
+                            console.info('网络失败');
+                        });
+                },
+                initSetTimeout: function() {
+                    var that = this;
+                    setIntervalGetAnchorInfo = setInterval(function() {
+                        that.getAnchorInfo();
+                    }, that.intervalDuration);
+                    setIntervalGetLiveStatus = setInterval(function() {
+                        that.getLiveStatus();
+                    }, that.intervalDuration);
+                },
+                singerVote: function(anchor) {
+                    var getUserID = selfUserID,
+                        getTargetUserID = anchor.userID;
+
+                    if (this.todayHadVote) {
+                        console.info('每日仅支持一次！');
+                        return;
+                    }
+
+                    this.$http.jsonp(this.singerVoteUrl + '?userID=' + getUserID + '&targetUserID=' + getTargetUserID + '&sessionID=' + selfSessionID + '&sessionToken=' + selfSessionToken + '&peerID=' + selfPeerID)
+                        .then(function(res) {
+                            var rtnData = res.data,
+                                that = this;
+                            if (rtnData.rtn == 0) {
+                                // console.info(rtnData.msg);
+                                Vue.set(anchor, 'showAdd', true);
+                                anchor.supportCnt++;
+                                this.anchorUserID = getTargetUserID;
+                                this.todayHadVote = true;
+
+                                clearInterval(setIntervalGetAnchorInfo);
+
+                                // 点击投票，动画（2秒）以后，重新拉取直播状态以及直播信息
+                                setTimeout(function() {
+                                    that.getAnchorInfo();
+                                    that.getLiveStatus();
+
+                                    setIntervalGetAnchorInfo = setInterval(function() {
+                                        that.getAnchorInfo();
+                                    }, that.intervalDuration);
+                                }, 2000);
+
+                            } else if (rtnData.rtn == 2 || rtnData.rtn == 3 || rtnData.rtn == 1) {
+                                console.info(rtnData.msg);
+                            }
+                        })
+                        .catch(function(res) {
+                            console.info('网络失败');
+                        });
+                },
+                jumpProfile: function(userID) {
+                    console.log(userID);
+                    if (window.pingo_js) {
+                        window.pingo_js.jumpPage('profile://' + userID);
+                    }
+                },
+                jumpVideo: function(anchor) {
+                    var curUserID = anchor.userID;
+                    window.location.href = 'http://api.impingo.me/static/singer/preselection-live.html?userID=' + curUserID; // 视频地址
+                    return;
+                },
+                jumpLive: function(anchor) {
+                    var curUserID = anchor.userID,
+                        curRoomID;
+                    this.livingInfo.forEach(function(living) {
+                        if (living.createUserID === curUserID) {
+                            if (living.state == "1") {
+                                curRoomID = living.roomID;
+                            }
+                        }
+                    });
+                    window.location.href = 'http://api.impingo.me/miniSite/livePage?liveID=' + curRoomID;
+                }
+            },
+            filters: {
+                getUserImg: function(val) {
+                    return 'http://a.impingo.me/static/activity/singer/resource/' + val + '.jpg'
+                },
+                getLiving: function(val, anchor) {
+                    var curUserID = anchor.userID,
+                        isLiving = false;
+                    this.livingInfo.forEach(function(living) {
+                        if (living.createUserID === curUserID) {
+                            if (living.state == "1") {
+                                isLiving = true;
+                            }
+                        }
+                    });
+                    return isLiving;
+                },
+                getVoteStatus: function(val, anchor) {
+                    if (anchor.userID == this.anchorUserID) {
+                        // 可支持
+                        return true;
+                    } else {
+                        // 不可支持
+                        return false;
+                    }
+                },
+            },
+        });
+    }
+
+guide.less
+
+    @import (inline) './normalize.css';
+    body {
+        background-color: #010017;
+    }
+
+    .container {
+        user-select: none;
+        font-family: 'Microsoft YaHei', sans-serif;
+        position: relative;
+        min-width: 320px;
+        max-width: 750px;
+        margin: 0 auto;
+        font-size: 0.32rem;
+    }
+
+    [v-cloak] {
+        display: none;
+    }
+
+    // 设计稿是 750px
+    // 1rem = 75px
+    @base: 75rem;
+    .demo {
+        text-align: center;
+        .btn {
+            width: 560 / @base;
+        }
+    }
+
+    .radio-wrapper {
+        .list {
+            padding-left: 18/@base;
+            padding-right: 18/@base;
+            padding-top: 35/@base;
+            li {
+                background-color: #fff;
+                width: 346/@base;
+                height: 488/@base;
+                position: relative;
+                margin-bottom: 20/@base;
+                float: left;
+                display: table;
+                &:nth-child(odd) {
+                    // margin-right: 10/@base;
+                }
+                &:nth-child(even) {
+                    float: right;
+                }
+                .live {
+                    position: absolute;
+                    background-color: #2aa2fe;
+                    width: 150/@base;
+                    height: 50/@base;
+                    border-top-right-radius: 100px;
+                    border-bottom-right-radius: 100px;
+                    left: -11/@base;
+                    top: 29/@base;
+                    z-index: 99;
+                    display: table;
+                    p {
+                        color: #fff;
+                        font-size: 24/@base;
+                        text-align: center;
+                        vertical-align: middle;
+                        display: table-cell;
+                    }
+                }
+                .link {
+                    display: block;
+                    width: 324/@base;
+                    height: 324/@base;
+                    position: absolute;
+                    left: 11/@base;
+                    right: 11/@base;
+                    top: 10/@base;
+                }
+                .user {
+                    width: 324/@base;
+                    display: block;
+                }
+                .play {
+                    width: 60/@base;
+                    position: absolute;
+                    left: 30/@base;
+                    top: 250/@base;
+                }
+                .add {
+                    position: absolute;
+                    font-size: 30/@base;
+                    font-weight: bold;
+                    color: #f919b6;
+                    z-index: 99;
+                    right: 30/@base;
+                    top: 310/@base;
+                    -webkit-animation: fadeOutUp 2s .2s ease both;
+                }
+                @-webkit-keyframes fadeOutUp {
+                    0% {
+                        opacity: 1;
+                        -webkit-transform: translateY(0)
+                    }
+                    30% {
+                        opacity: 0.7;
+                        font-size: 40/@base;
+                        -webkit-transform: translateY(-15px)
+                    }
+                    100% {
+                        opacity: 0;
+                        -webkit-transform: translateY(-30px)
+                    }
+                }
+                .user-wrapper {
+                    position: absolute;
+                    left: 11/@base;
+                    top: 350/@base;
+                    width: 320/@base;
+                    .name {
+                        color: #333;
+                        font-size: 26/@base;
+                        display: inline-block;
+                        width: 150/@base;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+                    .num {
+                        color: #f919b6;
+                        font-size: 26/@base;
+                        display: inline-block;
+                        float: right;
+                        // margin-left: 200/@base;
+                    }
+                }
+                .do-btn {
+                    background-color: #f919b6;
+                    text-align: center;
+                    border-radius: 15/@base;
+                    width: 306/@base;
+                    height: 70/@base;
+                    bottom: 20/@base;
+                    left: 20/@base;
+                    position: absolute;
+                    display: table;
+                    p {
+                        display: table-cell;
+                        vertical-align: middle;
+                        font-size: 30/@base;
+                        color: #fff;
+                    }
+                }
+                .had-btn {
+                    background-color: #ffb9e8;
+                    text-align: center;
+                    border-radius: 15/@base;
+                    width: 306/@base;
+                    height: 70/@base;
+                    bottom: 20/@base;
+                    left: 20/@base;
+                    position: absolute;
+                    display: table;
+                    p {
+                        display: table-cell;
+                        vertical-align: middle;
+                        font-size: 30/@base;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                }
+            }
+        }
+    }

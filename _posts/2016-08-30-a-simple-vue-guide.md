@@ -95,7 +95,7 @@ category: vue
 
 大体上的HTML结构就是这样，配合CSS样式，可以得到下面的输出结果：
 
-<img src="http://cody1991.github.io/source/2016.08.30/1.png">
+<img src="http://cody1991.github.io/source/2016.08.30/2.png">
 
 当然现在还都是静态数据。
 

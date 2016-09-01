@@ -646,6 +646,20 @@ category: vue
 
 * 文章可能描述的很啰嗦
 
+最后给出vue的排序指令代码：
+
+`li` 标签改成这样：
+
+    <li v-for="anchor in anchorInfo | orderBy supportCntFn">
+
+在vue实例里面的 `method` 对象添加：
+
+    supportCntFn: function(a, b) {
+        return (parseInt(b.supportCnt, 10) - parseInt(a.supportCnt, 10) >= 0);
+    },
+
+就大功告成了。（这里通过`parseInt`的原因是后台传回来的是字符串类型，如果直接排序的话 `2` 会比 `10` 排在前面，显然不符合我们的要求。）
+
 全部代码：
 
 [源码地址](https://github.com/cody1991/cody1991.github.io/tree/master/source/2016.08.30/vue-guide)

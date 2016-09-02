@@ -10,6 +10,8 @@ category: vue
 
 更新（2016.9.2）
 
+---
+
 感觉需要改善的地方有：
 
 * ([更新代码](https://github.com/cody1991/cody1991.github.io/tree/master/source/2016.08.30/vue-guide-more))`livingInfo` 数组和 `anchorInfo` 数组可以通过 computed 属性计算合成一个大的数组，那么很多的过滤器还有 `forEach` 遍历就可以省略掉了

@@ -12,7 +12,7 @@ category: vue
 
 感觉需要改善的地方有：
 
-* `livingInfo` 数组和 `anchorInfo` 数组可以通过 computed 属性计算合成一个大的数组，那么很多的过滤器还有 `forEach` 遍历就可以省略掉了 ([更新代码](https://github.com/cody1991/cody1991.github.io/tree/master/source/2016.08.30/vue-guide-more))
+* ([更新代码](https://github.com/cody1991/cody1991.github.io/tree/master/source/2016.08.30/vue-guide-more))`livingInfo` 数组和 `anchorInfo` 数组可以通过 computed 属性计算合成一个大的数组，那么很多的过滤器还有 `forEach` 遍历就可以省略掉了
 
 * 可以把整个 `ul` 下的部分做成一个组件
 

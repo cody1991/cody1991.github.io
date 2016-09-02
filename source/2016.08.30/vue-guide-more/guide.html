@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>vue guide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <link rel="stylesheet" href="./css/guide.css" />
+    <script src="http://7xnv74.com1.z0.glb.clouddn.com/static/lib/flexible/flexible.js"></script>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="radio-wrapper">
+            <ul class="list clearfix" v-cloak>
+                <li v-for="anchor in anchorAllInfo">
+                    <a class="link" @click="jumpVideo(anchor)">
+                        <div class="live" v-show="anchor.state=='1'" @click.stop="jumpLive(anchor)">
+                            <p>观看直播 ></p>
+                        </div>
+                        <img :src="anchor.userImg" class="user">
+                        <img src="./images/play.png" class="play">
+                        <p class="add" v-show="anchor.showAdd">+1</p>
+                    </a>
+                    <div class="user-wrapper">
+                        <div class="name" v-text="anchor.anchorName" @click="jumpProfile(anchor.userID)"></div>
+                        <div class="num" v-text="anchor.supportCnt"></div>
+                    </div>
+                    <template v-if="voteStatus | getVoteStatus anchor">
+                        <div class="had-btn">
+                            <p>今日已支持</p>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="do-btn" @click="singerVote(anchor,$index)">
+                            <p>支持</p>
+                        </div>
+                    </template>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="http://7xnv74.com1.z0.glb.clouddn.com/static/lib/fastclick/fastclick.min.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-resource.min.js"></script>
+    <script src="./js/guide.js?06"></script>
+</body>
+
+</html>

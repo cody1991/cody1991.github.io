@@ -71,7 +71,12 @@ window.onload = function() {
                     });
             },
             queryVoteStatus: function() {
-                this.$http.jsonp(this.queryVoteStatusUrl + '?userID=' + selfUserID)
+                // this.$http.jsonp(this.queryVoteStatusUrl + '?userID=' + selfUserID)
+                this.$http.jsonp(this.queryVoteStatusUrl, {
+                        params: {
+                            'userID': selfUserID
+                        }
+                    })
                     .then(function(res) {
                         var rtnData = res.data;
                         if (rtnData.rtn == 0) {
@@ -103,7 +108,15 @@ window.onload = function() {
                     return;
                 }
 
-                this.$http.jsonp(this.singerVoteUrl + '?userID=' + getUserID + '&targetUserID=' + getTargetUserID + '&sessionID=' + selfSessionID + '&sessionToken=' + selfSessionToken + '&peerID=' + selfPeerID)
+                this.$http.jsonp(this.singerVoteUrl, {
+                        params: {
+                            userID: getUserID,
+                            targetUserID: getTargetUserID,
+                            sessionID: selfSessionID,
+                            sessionToken: selfSessionToken,
+                            peerID: selfPeerID
+                        }
+                    })
                     .then(function(res) {
                         var rtnData = res.data,
                             that = this;

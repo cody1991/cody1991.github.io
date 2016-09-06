@@ -381,7 +381,12 @@ category: vue
         methods: {
             ...
             queryVoteStatus: function() {
-                this.$http.jsonp(this.queryVoteStatusUrl + '?userID=' + selfUserID)
+                // this.$http.jsonp(this.queryVoteStatusUrl + '?userID=' + selfUserID)
+                this.$http.jsonp(this.queryVoteStatusUrl, {
+                        params: {
+                            'userID': selfUserID
+                        }
+                    })
                     .then(function(res) {
                         var rtnData = res.data;
                         if (rtnData.rtn == 0) {
@@ -520,7 +525,15 @@ category: vue
                     return;
                 }
 
-                this.$http.jsonp(this.singerVoteUrl + '?userID=' + getUserID + '&targetUserID=' + getTargetUserID + '&sessionID=' + selfSessionID + '&sessionToken=' + selfSessionToken + '&peerID=' + selfPeerID)
+                this.$http.jsonp(this.singerVoteUrl, {
+                        params: {
+                            userID: getUserID,
+                            targetUserID: getTargetUserID,
+                            sessionID: selfSessionID,
+                            sessionToken: selfSessionToken,
+                            peerID: selfPeerID
+                        }
+                    })
                     .then(function(res) {
                         var rtnData = res.data,
                             that = this;
@@ -594,9 +607,25 @@ category: vue
 
 并在两秒（+1动画结束以后），重新获取直播信息还有主播信息，并且重启获取用户信息的计时器。这里主要考虑的是，点击以后，用户的票数会改变，排序上可能会改变，这个时候重新从后台获取信息，能保证点击以后数据是最新的，排序也是正确的。而清除计时器的原因是，在这次交互后我们已经更新了数据，计时器就应该重置，在规定的 `that.intervalDuration` 时间以后再重新拉取。
 
-    this.$http.jsonp(this.singerVoteUrl + '?userID=' + getUserID + '&targetUserID=' + getTargetUserID + '&sessionID=' + selfSessionID + '&sessionToken=' + selfSessionToken + '&peerID=' + selfPeerID)
+    //this.$http.jsonp(this.singerVoteUrl + '?userID=' + getUserID + '&targetUserID=' + getTargetUserID + '&sessionID=' + selfSessionID + '&sessionToken=' + selfSessionToken + '&peerID=' + selfPeerID)
 
-另外我们在这里看到一窜拼接的地址， vue-resource 应该是可以传递 `data` 对象来传递参数的，试了几次不知道为什么都不行，待改善。
+    this.$http.jsonp(this.singerVoteUrl, {
+        params: {
+            userID: getUserID,
+            targetUserID: getTargetUserID,
+            sessionID: selfSessionID,
+            sessionToken: selfSessionToken,
+            peerID: selfPeerID
+        }
+    });
+
+<del>另外我们在这里看到一窜拼接的地址， vue-resource 应该是可以传递 `data` 对象来传递参数的，试了几次不知道为什么都不行，待改善。</del>
+
+更新：vue-resource传参可以通过上面的方法。 然后这个地方可能会报错，因为后台需要 `sessionID` 和 `sessionToken` 
+
+    ?userID=10003&peerID=45C7781DE9BF&sessionID=67056f7abd062d4dea&&sessionToken=3df4ce5d23
+
+可以按照上面这样在url地址加上，然后再发送请求。
 
     <div class="name" v-text="anchor.anchorName" @click="jumpProfile(anchor.userID)"></div>
 
@@ -808,7 +837,12 @@ guide.js
                         });
                 },
                 queryVoteStatus: function() {
-                    this.$http.jsonp(this.queryVoteStatusUrl + '?userID=' + selfUserID)
+                    // this.$http.jsonp(this.queryVoteStatusUrl + '?userID=' + selfUserID)
+                    this.$http.jsonp(this.queryVoteStatusUrl, {
+                            params: {
+                                'userID': selfUserID
+                            }
+                        })
                         .then(function(res) {
                             var rtnData = res.data;
                             if (rtnData.rtn == 0) {
@@ -840,7 +874,15 @@ guide.js
                         return;
                     }
 
-                    this.$http.jsonp(this.singerVoteUrl + '?userID=' + getUserID + '&targetUserID=' + getTargetUserID + '&sessionID=' + selfSessionID + '&sessionToken=' + selfSessionToken + '&peerID=' + selfPeerID)
+                    this.$http.jsonp(this.singerVoteUrl, {
+                            params: {
+                                userID: getUserID,
+                                targetUserID: getTargetUserID,
+                                sessionID: selfSessionID,
+                                sessionToken: selfSessionToken,
+                                peerID: selfPeerID
+                            }
+                        })
                         .then(function(res) {
                             var rtnData = res.data,
                                 that = this;
@@ -923,6 +965,7 @@ guide.js
             },
         });
     }
+
 
 guide.less
 

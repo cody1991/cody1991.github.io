@@ -273,7 +273,7 @@ category: vue
         </a>
     </li>
 
-是否正在直播的DOM元素 `.live` 和点击投票的+1动画的DOM元素 `add` 我们暂时不考虑它们的暂时，在CSS里面都默认设置了 `display:none`。这里主要看的是用户的封面图 `.user`：
+是否正在直播的DOM元素 `.live` 和点击投票的+1动画的DOM元素 `add` 我们暂时不考虑它们，在CSS里面都默认设置了 `display:none`。这里主要看的是用户的封面图 `.user`：
 
     <img :src="anchor.userID | getUserImg" class="user">
 

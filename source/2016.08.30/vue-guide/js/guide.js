@@ -47,7 +47,7 @@ window.onload = function() {
             getAnchorInfo: function() {
                 this.$http.jsonp(this.getAnchorInfoUrl)
                     .then(function(res) {
-                        console.log(res);
+                        console.log(res.data);
                         var rtnData = res.data;
                         if (rtnData.rtn == 0) {
                             this.$set('anchorInfo', rtnData.data);

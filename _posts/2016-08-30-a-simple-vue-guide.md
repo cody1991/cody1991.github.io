@@ -204,7 +204,7 @@ category: vue
 
 [vue-resource](https://github.com/vuejs/vue-resource) 的使用可以看看这里，我们在这里使用 `jsonp` 方法请求了 `getAnchorInfoUrl` 地址的接口，如果请求成功的话，`then(function(res)){}` ，我们看看 `res` 的数据结构。
 
-vue-resource 的 `jsonp` 基本写法是（可以参看官方文档 [HTTP Requests/Response](https://github.com/vuejs/vue-resource/blob/master/docs/http.md)）：
+(补充)vue-resource 的 `jsonp` 基本写法是（可以参看官方文档 [HTTP Requests/Response](https://github.com/vuejs/vue-resource/blob/master/docs/http.md)）：
 
     this.$http.jsonp(url,{
             params: {

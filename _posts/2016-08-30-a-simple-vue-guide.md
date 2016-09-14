@@ -291,7 +291,7 @@ category: vue
 
     <img :src="anchor.userID | getUserImg" class="user">
 
-这里使用了过滤器 `getUserImg`。所以我们会在vue实例里面添加一个新的属性 `filters`以及 `getUserImg`过滤器定义：
+这里使用了过滤器 `getUserImg` (注意这里是 `:src`属性绑定)。所以我们会在vue实例里面添加一个新的属性 `filters`以及 `getUserImg`过滤器定义：
 
     filters: {
         getUserImg: function(val) {

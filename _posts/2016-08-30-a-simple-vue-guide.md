@@ -273,6 +273,20 @@ category: vue
         </a>
     </li>
 
+（补充）这里给出vue的排序指令代码：
+
+`li` 标签改成这样：
+
+    <li v-for="anchor in anchorInfo | orderBy supportCntFn">
+
+在vue实例里面的 `method` 对象添加：
+
+    supportCntFn: function(a, b) {
+        return (parseInt(b.supportCnt, 10) - parseInt(a.supportCnt, 10) >= 0);
+    },
+
+这里通过`parseInt`的原因是后台传回来的是字符串类型，如果直接排序的话 `2` 会比 `10` 排在前面，显然不符合我们的要求。后面继续。
+
 是否正在直播的DOM元素 `.live` 和点击投票的+1动画的DOM元素 `add` 我们暂时不考虑它们，在CSS里面都默认设置了 `display:none`。这里主要看的是用户的封面图 `.user`：
 
     <img :src="anchor.userID | getUserImg" class="user">
@@ -713,20 +727,6 @@ category: vue
 * 可以把整个 `ul` 下的部分做成一个组件
 
 * 文章可能描述的很啰嗦
-
-最后给出vue的排序指令代码：
-
-`li` 标签改成这样：
-
-    <li v-for="anchor in anchorInfo | orderBy supportCntFn">
-
-在vue实例里面的 `method` 对象添加：
-
-    supportCntFn: function(a, b) {
-        return (parseInt(b.supportCnt, 10) - parseInt(a.supportCnt, 10) >= 0);
-    },
-
-就大功告成了。（这里通过`parseInt`的原因是后台传回来的是字符串类型，如果直接排序的话 `2` 会比 `10` 排在前面，显然不符合我们的要求。）
 
 全部代码：
 

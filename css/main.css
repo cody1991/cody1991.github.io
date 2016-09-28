@@ -232,6 +232,7 @@ table {
   overflow: hidden;
   display: block;
   font-size: 24px;
+  text-transform: capitalize;
 }
 .post-list li .post-meta {
   font-size: 14px;
@@ -283,6 +284,7 @@ table {
   margin-top: 15px;
   font-size: 42px;
   line-height: 1.5;
+  text-transform: capitalize;
 }
 .post-content {
   margin-bottom: 30px;
@@ -290,14 +292,14 @@ table {
 .post-content h1,
 .post-content h2,
 .post-content h3 {
-  border-bottom: 1px solid #eee;
   margin-bottom: 1em;
+  padding-left: 10px;
+  border-left: 8px solid #4b42a3;
 }
 .post-content a {
   color: #835092;
 }
 .post-content p {
-  text-indent: 2em;
   color: #222222;
   margin-bottom: 1em;
 }
@@ -309,7 +311,6 @@ table {
 }
 .post-content ol,
 .post-content ul {
-  padding-left: 2em;
   padding-top: 1em;
   padding-bottom: 1em;
 }

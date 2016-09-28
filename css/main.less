@@ -265,6 +265,8 @@ table {
             overflow: hidden;
             display: block;
             font-size: 24px;
+            text-transform: capitalize;
+            ;
         }
         .post-meta {
             font-size: 14px;
@@ -321,6 +323,7 @@ table {
         margin-top: 15px;
         font-size: 42px;
         line-height: 1.5;
+        text-transform: capitalize;
     }
 }
 
@@ -328,14 +331,16 @@ table {
     h1,
     h2,
     h3 {
-        border-bottom: 1px solid #eee;
+        // border-bottom: 1px solid #eee;
         margin-bottom: 1em;
+        padding-left: 10px;
+        border-left: 8px solid #4b42a3;
     }
     a {
         color: #835092;
     }
     p {
-        text-indent: 2em;
+        // text-indent: 2em;
         color: @main-color;
         margin-bottom: 1em;
     }
@@ -347,7 +352,7 @@ table {
     }
     ol,
     ul {
-        padding-left: 2em;
+        // padding-left: 2em;
         padding-top: 1em;
         padding-bottom: 1em;
         p {

@@ -1,52 +1,63 @@
-使用jekyll模板来创建的个人博客
+#Welcome simplified Jekyll theme
 
-./study
----
-
-存放着个人学习的源代码
-
-./post
----
-
-存放着所有文章的markdown格式文件
-
-./recycle
----
-
-存放着舍弃了的文章文件
-
-./source
----
-
-存放一个图片等其他资源
-
-
-#Welcome simplified jekyll theme
-
-The purpose of this jekyll theme is to make a simplified theme.
+The purpose of this Jekyll theme is to make a simplified theme.
 
 #Usage
 
-see the `_config.yml` 
+first, see the [Jekyll • Simple, blog-aware, static sites - Transform your plain text into static websites and blogs](http://jekyllrb.com/) to get you Jekyll installed.
+
+---
+
+Then see the `_config.yml` 
 
     # Site settings
     encoding: utf-8
-    title: Home
-    description: simplified-jekyll-theme
-    baseurl: "http://cody1991.github.io/simplified-jekyll-theme" 
-    #baseurl: ''
+    title: cody
+    description: cody1991的个人博客
+    # baseurl: "http://cody1991.github.io" 
+    baseurl: ''
     github_username:  cody1991
-    paginate: 6
+    paginate: 10
     paginate_path: "/page:num"
-    footer_github: "cody的github"
+    footer_books: "书旅"
+    footer_github: "github"
+    footer_resume: "简历"
     footer_resume_site: "http://cody1991.github.io/aboutme/index.html"
-    port: 8080
+    port: 8070
+    gems: [jekyll-paginate]
 
-you juse neet to change
 
-    1   `title` as your site's title
-    2   `description` as your site's description
-    3   `baseurl` is empty when you are running localhost with the `port` and the long baseurl is your site's url
-    4   `github_username` is your github's name
+You juse neet to change
+
+    * `title` as your site's title
+    * `description` as your site's description
+    * `baseurl` is empty when you are running localhost with the `port` and the long baseurl is your site's url
+    * `github_username` is your github's name
+    * `paginate` as the number of blog every page
+    * `paginate_path` as the format of the paginate
+    * `footer_*` as the description of the footer link
+    * `port` as the prot when you are running localhost
+    * `gems` as an array contains some plugins you are using
     
-...more and more
+## License
+The MIT License (MIT)
+
+Copyright (c) 2015~2016 cody1991
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

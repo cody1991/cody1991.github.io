@@ -1,8 +1,6 @@
-window.onload = function() {
+$(document).ready(function() {
     $('#loading').remove();
     $('body').css('overflow', 'auto');
-}
-$(document).ready(function() {
 
     //  unveil function
     (function($) {
@@ -98,7 +96,7 @@ $(document).ready(function() {
 
         function init() {
             $("#toTop").scrollToTop();
-            $('.book-images').unveil(200,function(){
+            $('.book-images').unveil(200, function() {
                 $(this).removeClass('book-images');
             });
             var siteNav = $('#site-nav');

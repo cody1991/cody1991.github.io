@@ -197,6 +197,12 @@ table {
   height: 25px;
   display: inline-block;
 }
+.page a:hover {
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: #000;
+  color: #fff;
+}
 .page .next,
 .page .prev {
   display: inline-block;

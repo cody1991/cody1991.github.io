@@ -12,20 +12,19 @@ Then see the `_config.yml`
 
     # Site settings
     encoding: utf-8
-    title: cody
-    description: cody1991的个人博客
-    # baseurl: "http://cody1991.github.io" 
-    baseurl: ''
+    title: Cody
+    description: Cody1991的个人博客
+    baseurl: "http://cody1991.github.io" 
+    # baseurl: ''
     github_username:  cody1991
-    paginate: 10
+    paginate: 5
     paginate_path: "/page:num"
     footer_books: "书旅"
-    footer_github: "github"
+    footer_github: "GitHub"
     footer_resume: "简历"
     footer_resume_site: "http://cody1991.github.io/aboutme/index.html"
     port: 8070
     gems: [jekyll-paginate]
-
 
 You juse neet to change
 

@@ -15,7 +15,7 @@ category: frontend
 
 # Heroku 简明教程
 
-我们主要现在这里注册我们的 [Heroku](https://www.heroku.com/) 账号，注册成功会进入到我的面板，选择如下图的按钮
+先在这里注册我们的 [Heroku](https://www.heroku.com/) 账号，注册成功会进入到我的面板，选择如下图的按钮
 
 <img src="{{site.baseurl}}/source/2016.12.05/blog-1.png">
 
@@ -25,9 +25,9 @@ category: frontend
 
 有两种开发模式，一种是使用 Heroku CLI，需要下载 Heroku 的工具，另外一种就是使用和 Github 关联的方式。我们这里选择第一种方法，在这里下载工具 [heroku-cli](https://devcenter.heroku.com/articles/heroku-cli)
 
-接下来有一个官方的教程，我觉得是蛮不错的 [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) 里面能带你很快得创建一个在线的 Heroku + Nodejs 的应用。最后我们能得到事例 [codyblog](https://codyblog.herokuapp.com/) 这样的一个网站，代表成功了。
+接下来有一个官方的教程，我觉得是蛮不错的 [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) 里面能带你很快得创建一个在线的 Heroku + Nodejs 的应用。最后我们能得到和教程中类似的 [codyblog](https://codyblog.herokuapp.com/) 网站，代表成功了。
 
-这里给提个醒，在 [deploy-the-app](https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app) 最上面提到了使用 Heroku create 指令，它会创建一个新的应用，我们通过上面官网创建应用的方式，这里不再需要输入这条指令了：
+这里给提个醒，在 [deploy-the-app](https://devcenter.heroku.com/articles/getting-started-with-nodejs#deploy-the-app) 最上面提到了使用 `Heroku create` 指令，它会创建一个新的应用，我们通过上面官网创建应用的方式，这里不再需要输入这条指令了：
 
 <img src="{{site.baseurl}}/source/2016.12.05/blog-3.png">
 

@@ -15,7 +15,7 @@ layout: default
                 {{ post.date | date: "%b %-d, %Y" }}
             </span>
             <a class="preview" href="{{ post.url | prepend: site.baseurl }}">
-                {{ post.content | strip_html | strip_newlines | truncate: 160 }}
+                {{ post.content | strip_html | strip_newlines | truncate: 320 }}
             </a>
             <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">
                 Read More

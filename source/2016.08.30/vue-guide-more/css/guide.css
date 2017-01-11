@@ -65,19 +65,19 @@ body {
   text-align: center;
 }
 .demo .btn {
-  width: 7.46666667rem;
+  width: 560 / 75rem;
 }
 .radio-wrapper .list {
-  padding-left: 0.24rem;
-  padding-right: 0.24rem;
-  padding-top: 0.46666667rem;
+  padding-left: 18/75rem;
+  padding-right: 18/75rem;
+  padding-top: 35/75rem;
 }
 .radio-wrapper .list li {
   background-color: #fff;
-  width: 4.61333333rem;
-  height: 6.50666667rem;
+  width: 346/75rem;
+  height: 488/75rem;
   position: relative;
-  margin-bottom: 0.26666667rem;
+  margin-bottom: 20/75rem;
   float: left;
   display: table;
 }
@@ -87,49 +87,49 @@ body {
 .radio-wrapper .list li .live {
   position: absolute;
   background-color: #2aa2fe;
-  width: 2rem;
-  height: 0.66666667rem;
+  width: 150/75rem;
+  height: 50/75rem;
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
-  left: -0.14666667rem;
-  top: 0.38666667rem;
+  left: -11/75rem;
+  top: 29/75rem;
   z-index: 99;
   display: table;
 }
 .radio-wrapper .list li .live p {
   color: #fff;
-  font-size: 0.32rem;
+  font-size: 24/75rem;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
 }
 .radio-wrapper .list li .link {
   display: block;
-  width: 4.32rem;
-  height: 4.32rem;
+  width: 324/75rem;
+  height: 324/75rem;
   position: absolute;
-  left: 0.14666667rem;
-  right: 0.14666667rem;
-  top: 0.13333333rem;
+  left: 11/75rem;
+  right: 11/75rem;
+  top: 10/75rem;
 }
 .radio-wrapper .list li .user {
-  width: 4.32rem;
+  width: 324/75rem;
   display: block;
 }
 .radio-wrapper .list li .play {
-  width: 0.8rem;
+  width: 60/75rem;
   position: absolute;
-  left: 0.4rem;
-  top: 3.33333333rem;
+  left: 30/75rem;
+  top: 250/75rem;
 }
 .radio-wrapper .list li .add {
   position: absolute;
-  font-size: 0.4rem;
+  font-size: 30/75rem;
   font-weight: bold;
   color: #f919b6;
   z-index: 99;
-  right: 0.4rem;
-  top: 4.13333333rem;
+  right: 30/75rem;
+  top: 310/75rem;
   -webkit-animation: fadeOutUp 2s .2s ease both;
 }
 @-webkit-keyframes fadeOutUp {
@@ -139,7 +139,7 @@ body {
   }
   30% {
     opacity: 0.7;
-    font-size: 0.53333333rem;
+    font-size: 40/75rem;
     -webkit-transform: translateY(-15px);
   }
   100% {
@@ -149,56 +149,57 @@ body {
 }
 .radio-wrapper .list li .user-wrapper {
   position: absolute;
-  left: 0.14666667rem;
-  top: 4.66666667rem;
-  width: 4.26666667rem;
+  left: 11/75rem;
+  top: 350/75rem;
+  width: 320/75rem;
 }
 .radio-wrapper .list li .user-wrapper .name {
   color: #333;
-  font-size: 0.34666667rem;
+  font-size: 26/75rem;
   display: inline-block;
-  width: 2rem;
+  width: 150/75rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 .radio-wrapper .list li .user-wrapper .num {
   color: #f919b6;
-  font-size: 0.34666667rem;
+  font-size: 26/75rem;
   display: inline-block;
   float: right;
 }
 .radio-wrapper .list li .do-btn {
   background-color: #f919b6;
   text-align: center;
-  border-radius: 0.2rem;
-  width: 4.08rem;
-  height: 0.93333333rem;
-  bottom: 0.26666667rem;
-  left: 0.26666667rem;
+  border-radius: 15/75rem;
+  width: 306/75rem;
+  height: 70/75rem;
+  bottom: 20/75rem;
+  left: 20/75rem;
   position: absolute;
   display: table;
 }
 .radio-wrapper .list li .do-btn p {
   display: table-cell;
   vertical-align: middle;
-  font-size: 0.4rem;
+  font-size: 30/75rem;
   color: #fff;
 }
 .radio-wrapper .list li .had-btn {
   background-color: #ffb9e8;
   text-align: center;
-  border-radius: 0.2rem;
-  width: 4.08rem;
-  height: 0.93333333rem;
-  bottom: 0.26666667rem;
-  left: 0.26666667rem;
+  border-radius: 15/75rem;
+  width: 306/75rem;
+  height: 70/75rem;
+  bottom: 20/75rem;
+  left: 20/75rem;
   position: absolute;
   display: table;
 }
 .radio-wrapper .list li .had-btn p {
   display: table-cell;
   vertical-align: middle;
-  font-size: 0.4rem;
+  font-size: 30/75rem;
   color: rgba(255, 255, 255, 0.6);
 }
+/*# sourceMappingURL=guide.css.map */

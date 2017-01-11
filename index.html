@@ -27,7 +27,7 @@ layout: default
     {% if paginator.total_pages > 1 %}
     <div class="page clearfix">
         {% if paginator.previous_page %}
-        <a class="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">&lt;</a> 
+            <a class="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl }}"></a> 
         {% endif %} 
 
         {% for page in (1..paginator.total_pages) %} 
@@ -41,7 +41,7 @@ layout: default
         {% endfor %} 
 
         {% if paginator.next_page %}
-            <a class="next" href="{{ paginator.next_page_path | prepend: site.baseurl }}">&gt;</a> 
+            <a class="next" href="{{ paginator.next_page_path | prepend: site.baseurl }}"></a> 
         {% endif %}
     </div>
     {% endif %}

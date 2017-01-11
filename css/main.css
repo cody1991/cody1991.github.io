@@ -166,7 +166,7 @@ table {
     包裹层
 */
 .wrapper {
-  max-width: calc(1280px);
+  max-width: calc(1340px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
@@ -174,7 +174,7 @@ table {
 }
 @media screen and (max-width: 800px) {
   .wrapper {
-    max-width: calc(770px);
+    max-width: calc(800px - (30px));
     padding-right: 15px;
     padding-left: 15px;
   }
@@ -185,16 +185,16 @@ table {
 .page {
   display: block;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 14px;
   position: relative;
   text-align: center;
 }
 .page span,
 .page a {
   float: left;
-  line-height: 25px;
-  width: 25px;
-  height: 25px;
+  line-height: 24px;
+  width: 24px;
+  height: 24px;
   display: inline-block;
 }
 .page a:hover {
@@ -209,11 +209,40 @@ table {
   position: absolute;
   top: 0;
 }
+.page .next:after,
+.page .prev:after {
+  content: '';
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  border-top: 1px solid #222222;
+  border-right: 1px solid #222222;
+}
+.page .next:hover:after,
+.page .prev:hover:after {
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
 .page .prev {
-  left: -25px;
+  left: -24px;
+}
+.page .prev:after {
+  -webkit-transform: translate(-25%, -60%) rotate(-135deg);
+      -ms-transform: translate(-25%, -60%) rotate(-135deg);
+          transform: translate(-25%, -60%) rotate(-135deg);
 }
 .page .next {
-  right: -25px;
+  right: -24px;
+}
+.page .next:after {
+  -webkit-transform: translate(-75%, -60%) rotate(45deg);
+      -ms-transform: translate(-75%, -60%) rotate(45deg);
+          transform: translate(-75%, -60%) rotate(45deg);
 }
 .page span {
   cursor: default;
@@ -557,3 +586,4 @@ table {
   width: 90px;
   height: 120px;
 }
+/*# sourceMappingURL=main.css.map */

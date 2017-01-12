@@ -5,7 +5,7 @@ description: Cody1991的个人博客
 baseurl: "https://cody1991.github.io" 
 # baseurl: ''
 github_username:  cody1991
-paginate: 5
+paginate: 8
 paginate_path: "/page:num"
 footer_twitter: "Twitter"
 footer_twitter_site: "https://twitter.com/cody19910828"

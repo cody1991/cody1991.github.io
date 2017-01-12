@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "learn-modern-php-book-4-generator"
+title:  "learn-modern-PHP-book-4-generator"
 date:   2017-01-10 16:41:00
-category: php
+category: PHP
 ---
 
     // 生成器就是php函数，在函数中一次或多次使用yield关键字

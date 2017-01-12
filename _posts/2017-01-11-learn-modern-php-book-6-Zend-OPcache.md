@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "learn-modern-php-book-6-Zend-OPcache"
+title:  "learn-modern-PHP-book-6-Zend-OPcache"
 date:   2017-01-11 16:32:00
-category: php
+category: PHP
 ---
 
 字节码缓存不是 `PHP` 的新特性，很多独立的扩展可以实现缓存，比如 `Alternative PHP Cache(APC)` `eAccelerator` `ionCube` 和 `XCache`。但是都没有集成到 `PHP` 核心中。

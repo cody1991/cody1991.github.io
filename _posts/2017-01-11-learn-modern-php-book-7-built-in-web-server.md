@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "learn-modern-php-book-7-built-in-web-server"
+title:  "learn-modern-PHP-book-7-built-in-web-server"
 date:   2017-01-11 17:38:00
-category: php
+category: PHP
 ---
 
 `PHP 5.4.0` 开始内置了 `Web` 服务器

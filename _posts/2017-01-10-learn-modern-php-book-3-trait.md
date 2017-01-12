@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "learn-modern-php-book-3-trait"
+title:  "learn-modern-PHP-book-3-trait"
 date:   2017-01-10 15:50:00
-category: php
+category: PHP
 ---
 
 # 性状

@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "learn-modern-php-book-1-namespace"
+title:  "learn-modern-PHP-book-1-namespace"
 date:   2017-01-10 14:05:00
-category: php
+category: PHP
 ---
 
 开始学习 [Modern PHP](https://book.douban.com/subject/26635862/) 一书，看到豆瓣的评分还是不错的，也有人推荐

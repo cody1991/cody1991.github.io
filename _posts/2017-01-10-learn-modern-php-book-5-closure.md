@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "learn-modern-php-book-5-closure"
+title:  "learn-modern-PHP-book-5-closure"
 date:   2017-01-10 19:29:00
-category: php
+category: PHP
 ---
 
 闭包指创建时封装周围状态的函数。即使闭包所在的环境不存在了，闭包中封装的状态依然存在。

@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "learn-modern-php-book-2-interface"
+title:  "learn-modern-PHP-book-2-interface"
 date:   2017-01-10 14:05:00
-category: php
+category: PHP
 ---
 
 接口是两个对象之间的默契，目的不是让一个对象以来另外一个对象的身份，而是依赖另一个对象的能力

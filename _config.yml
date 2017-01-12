@@ -7,7 +7,8 @@ baseurl: "https://cody1991.github.io"
 github_username:  cody1991
 paginate: 5
 paginate_path: "/page:num"
-footer_books: "书旅"
+footer_twitter: "Twitter"
+footer_twitter_site: "https://twitter.com/cody19910828"
 footer_github: "GitHub"
 footer_resume: "简历"
 footer_resume_site: "https://cody1991.github.io/aboutme/index.html"

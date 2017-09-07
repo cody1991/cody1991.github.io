@@ -13,20 +13,18 @@ layout: default
     <article class="post-content">
         {{ content }}
     </article>
-    <div class="ds-thread"></div>
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-    <script type="text/javascript">
-    var categoryEle = {{page.category}};
-    categoryEle.className += ' active';
-    var duoshuoQuery = {short_name:"sysutangzx"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-      </script>
-    <!-- 多说公共JS代码 end -->
+    <div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+    var gitment = new Gitment({
+      owner: 'cody1991',
+      repo: 'cody1991.github.io',
+      oauth: {
+        client_id: '286834ce17a5b9971275',
+        client_secret: '5adff8e9c688905d62dd8fc5f54561ed2e59ed4c',
+      },
+    })
+    gitment.render('container')
+    </script>
 </div>

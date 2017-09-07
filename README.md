@@ -1,3 +1,7 @@
+#Update
+
+2017.09.07 Update duoshuo to gitment , see [commit](https://github.com/cody1991/cody1991.github.io/commit/2996c8f2e4aa90e5e33764605c407f5fd18eb1a2)
+
 #Welcome simplified Jekyll theme
 
 The purpose of this Jekyll theme is to make a simplified theme.

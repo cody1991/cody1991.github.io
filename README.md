@@ -1,12 +1,12 @@
-#Update
+## Update
 
-2017.09.07 Update duoshuo to gitment , see [commit](https://github.com/cody1991/cody1991.github.io/commit/2996c8f2e4aa90e5e33764605c407f5fd18eb1a2)
+2017.09.07 Update duoshuo to gitment , see [commit](https://github.com/cody1991/cody1991.github.io/commit/2996c8f2e4aa90e5e33764605c407f5fd18eb1a2) , refer [gitment-introduction](https://imsun.net/posts/gitment-introduction/)
 
-#Welcome simplified Jekyll theme
+## Welcome simplified Jekyll theme
 
 The purpose of this Jekyll theme is to make a simplified theme.
 
-#Usage
+## Usage
 
 first, see the [Jekyll • Simple, blog-aware, static sites - Transform your plain text into static websites and blogs](http://jekyllrb.com/) to get you Jekyll installed.
 
